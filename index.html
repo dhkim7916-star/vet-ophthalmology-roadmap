@@ -1,645 +1,1159 @@
 <!doctype html>
-<html lang="ko" data-theme="light" data-detail="concise" data-mode="scroll">
+<html lang="ko" data-theme="light" data-density="concise">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
-  <meta name="description" content="수의안과 치료 후 안구 상태, 기능적 시각행동, 생활 적응의 관계와 단계적 연구 프로그램을 시각적으로 탐색하는 인터랙티브 로드맵" />
-  <title>수의안과 기능적 시각행동 연구 — 시각 강화 로드맵</title>
+  <meta name="description" content="수의안과 치료 후 안구 상태, 기능적 시각행동, 생활 적응의 관계를 설명하는 인터랙티브 연구 로드맵" />
+  <title>수의안과 기능적 시각행동 연구 로드맵</title>
   <style>
     :root {
-      --bg: #edf2f4;
-      --paper: #f8fafb;
-      --panel: #ffffff;
-      --ink: #102631;
-      --ink-2: #344c56;
-      --muted: #667b83;
-      --faint: #92a1a7;
-      --line: #cbd7db;
-      --line-soft: #dfe7ea;
-      --cyan: #0f8995;
-      --cyan-2: #25a9b4;
-      --cyan-soft: #dceff1;
-      --red: #a7464e;
-      --red-2: #c76168;
-      --red-soft: #f4e5e7;
-      --violet: #555b9f;
-      --violet-soft: #e7e8f4;
-      --lime: #718d52;
-      --lime-soft: #e8eedf;
-      --dark: #071820;
-      --dark-panel: #0d2530;
-      --dark-line: #24414c;
-      --focus: #f1a23a;
-      --shadow: 0 20px 60px rgba(17, 46, 58, .10);
-      --font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "D2Coding", monospace;
-      --page: min(1240px, calc(100vw - 48px));
-      --nav-h: 64px;
-      --radius: 6px;
+      --paper: #f5f3ee;
+      --surface: #fbfaf7;
+      --surface-strong: #ffffff;
+      --ink: #1c2930;
+      --muted: #69747a;
+      --faint: #8e979b;
+      --rule: #cbc7bd;
+      --rule-soft: #dedbd3;
+      --teal: #287e80;
+      --teal-soft: #dfeeee;
+      --burgundy: #795263;
+      --burgundy-soft: #eee2e6;
+      --sand: #e7e0d4;
+      --focus: #145f65;
+      --shadow: 0 16px 42px rgba(31, 44, 49, 0.08);
+      --display: "Noto Serif CJK KR", "Noto Serif KR", "AppleMyungjo", "Batang", serif;
+      --body: "NanumSquare", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      --mono: "Noto Sans Mono CJK KR", "D2Coding", monospace;
+      --page: min(1180px, calc(100vw - 44px));
+      --radius: 2px;
+      --nav-h: 60px;
     }
 
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme]) {
-        --bg: #07161d;
-        --paper: #0a1d25;
-        --panel: #102832;
-        --ink: #eff7f7;
-        --ink-2: #c8d6d8;
-        --muted: #9fb2b7;
-        --faint: #70898f;
-        --line: #31505a;
-        --line-soft: #213d47;
-        --cyan: #66cad0;
-        --cyan-2: #8ddde1;
-        --cyan-soft: #173d43;
-        --red: #e59aa1;
-        --red-2: #efb3b8;
-        --red-soft: #432b32;
-        --violet: #b8b9ec;
-        --violet-soft: #323558;
-        --lime: #b3ca91;
-        --lime-soft: #31402a;
-        --shadow: 0 20px 60px rgba(0, 0, 0, .30);
+        --paper: #12191c;
+        --surface: #182125;
+        --surface-strong: #1e292d;
+        --ink: #edf2f1;
+        --muted: #b6c1c1;
+        --faint: #899697;
+        --rule: #425054;
+        --rule-soft: #2d3b3e;
+        --teal: #7bc0bd;
+        --teal-soft: #1d3c3e;
+        --burgundy: #d2a1b1;
+        --burgundy-soft: #3a2931;
+        --sand: #2b3435;
+        --focus: #b3e3df;
+        --shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
       }
     }
+
     :root[data-theme="dark"] {
-      --bg: #07161d; --paper: #0a1d25; --panel: #102832; --ink: #eff7f7; --ink-2: #c8d6d8;
-      --muted: #9fb2b7; --faint: #70898f; --line: #31505a; --line-soft: #213d47;
-      --cyan: #66cad0; --cyan-2: #8ddde1; --cyan-soft: #173d43;
-      --red: #e59aa1; --red-2: #efb3b8; --red-soft: #432b32;
-      --violet: #b8b9ec; --violet-soft: #323558; --lime: #b3ca91; --lime-soft: #31402a;
-      --shadow: 0 20px 60px rgba(0, 0, 0, .30);
+      --paper: #12191c;
+      --surface: #182125;
+      --surface-strong: #1e292d;
+      --ink: #edf2f1;
+      --muted: #b6c1c1;
+      --faint: #899697;
+      --rule: #425054;
+      --rule-soft: #2d3b3e;
+      --teal: #7bc0bd;
+      --teal-soft: #1d3c3e;
+      --burgundy: #d2a1b1;
+      --burgundy-soft: #3a2931;
+      --sand: #2b3435;
+      --focus: #b3e3df;
+      --shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
     }
+
     :root[data-theme="light"] {
-      --bg: #edf2f4; --paper: #f8fafb; --panel: #ffffff; --ink: #102631; --ink-2: #344c56;
-      --muted: #667b83; --faint: #92a1a7; --line: #cbd7db; --line-soft: #dfe7ea;
-      --cyan: #0f8995; --cyan-2: #25a9b4; --cyan-soft: #dceff1;
-      --red: #a7464e; --red-2: #c76168; --red-soft: #f4e5e7;
-      --violet: #555b9f; --violet-soft: #e7e8f4; --lime: #718d52; --lime-soft: #e8eedf;
-      --shadow: 0 20px 60px rgba(17, 46, 58, .10);
+      --paper: #f5f3ee;
+      --surface: #fbfaf7;
+      --surface-strong: #ffffff;
+      --ink: #1c2930;
+      --muted: #69747a;
+      --faint: #8e979b;
+      --rule: #cbc7bd;
+      --rule-soft: #dedbd3;
+      --teal: #287e80;
+      --teal-soft: #dfeeee;
+      --burgundy: #795263;
+      --burgundy-soft: #eee2e6;
+      --sand: #e7e0d4;
+      --focus: #145f65;
+      --shadow: 0 16px 42px rgba(31, 44, 49, 0.08);
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 18px); }
     body {
-      margin: 0; color: var(--ink); background: var(--bg); font-family: var(--font);
-      line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased;
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body);
+      line-height: 1.72;
+      overflow-x: hidden;
     }
-    button, input, select { font: inherit; color: inherit; }
-    button { cursor: pointer; }
-    button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
-      outline: 3px solid color-mix(in srgb, var(--focus) 70%, transparent); outline-offset: 3px;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .16;
+      background-image:
+        linear-gradient(to right, transparent calc(100% - 1px), var(--rule-soft) calc(100% - 1px)),
+        linear-gradient(to bottom, transparent calc(100% - 1px), var(--rule-soft) calc(100% - 1px));
+      background-size: 96px 96px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.35), transparent 52%);
+      z-index: -1;
     }
     a { color: inherit; }
-    .skip-link { position: fixed; left: 12px; top: 8px; z-index: 999; transform: translateY(-160%); padding: 9px 13px; background: var(--ink); color: var(--paper); }
+    button, summary { font: inherit; }
+    button { color: inherit; }
+    button:focus-visible, a:focus-visible, summary:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--focus) 60%, transparent);
+      outline-offset: 4px;
+    }
+    .skip-link {
+      position: fixed; left: 12px; top: 8px; z-index: 100;
+      transform: translateY(-160%);
+      padding: 10px 14px; background: var(--ink); color: var(--paper);
+      border-radius: var(--radius); text-decoration: none;
+    }
     .skip-link:focus { transform: translateY(0); }
 
     .topbar {
-      position: sticky; top: 0; z-index: 100; min-height: var(--nav-h);
-      background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--line-soft);
+      position: sticky; top: 0; z-index: 50;
+      min-height: var(--nav-h);
+      background: color-mix(in srgb, var(--paper) 88%, transparent);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--rule-soft);
     }
-    .topbar__inner { width: var(--page); margin: auto; min-height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
-    .brand__glyph { width: 28px; height: 28px; position: relative; border: 1px solid var(--cyan); border-radius: 50%; flex: 0 0 auto; }
-    .brand__glyph::before, .brand__glyph::after { content: ""; position: absolute; inset: 5px; border: 1px solid var(--cyan); border-radius: 50%; }
-    .brand__glyph::after { inset: 10px; background: var(--cyan); border: 0; }
-    .brand__text { font-size: 13px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .top-actions { display: flex; align-items: center; gap: 7px; }
-    .control {
-      min-height: 38px; padding: 7px 11px; border: 1px solid var(--line); background: var(--panel);
-      border-radius: 3px; font-size: 12px; font-weight: 750; transition: border-color .18s, background .18s, transform .18s;
+    .topbar__inner {
+      width: var(--page); margin: 0 auto; min-height: var(--nav-h);
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
     }
-    .control:hover { border-color: var(--cyan); background: var(--cyan-soft); }
-    .control:active { transform: translateY(1px); }
-    .control--icon { width: 40px; padding: 0; display: grid; place-items: center; font-size: 16px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand__mark { width: 18px; height: 3px; background: var(--teal); flex: 0 0 auto; }
+    .brand__text {
+      font-size: 13px; font-weight: 800; letter-spacing: -.01em;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .controls { display: flex; align-items: center; gap: 8px; }
+    .icon-button, .density-button, .share-button {
+      border: 1px solid var(--rule); background: var(--surface);
+      min-height: 38px; padding: 7px 11px; cursor: pointer;
+      border-radius: var(--radius); transition: background .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .icon-button:hover, .density-button:hover, .share-button:hover { background: var(--surface-strong); border-color: var(--teal); }
+    .icon-button:active, .density-button:active, .share-button:active { transform: translateY(1px); }
+    .icon-button { width: 40px; display: grid; place-items: center; padding: 0; }
+    .density-button { font-size: 12px; font-weight: 800; letter-spacing: .02em; }
+    .share-button { font-size: 12px; font-weight: 800; }
 
-    .scroll-progress { position: fixed; top: var(--nav-h); left: 0; width: 100%; height: 2px; background: transparent; z-index: 101; }
-    .scroll-progress span { display: block; height: 100%; width: 0%; background: linear-gradient(90deg, var(--cyan), var(--red)); }
-
-    .shell { width: var(--page); margin: auto; display: grid; grid-template-columns: 154px minmax(0, 1fr); gap: 38px; }
-    .rail { position: sticky; top: calc(var(--nav-h) + 24px); height: max-content; padding-top: 34px; }
-    .rail__label { font: 700 10px/1 var(--mono); letter-spacing: .12em; color: var(--faint); text-transform: uppercase; }
-    .rail ol { margin: 17px 0 0; padding: 0; list-style: none; display: grid; gap: 2px; }
-    .rail a { display: grid; grid-template-columns: 12px 1fr; gap: 9px; align-items: start; padding: 8px 0; text-decoration: none; font-size: 11.5px; color: var(--muted); }
-    .rail a::before { content: ""; width: 8px; height: 8px; margin-top: 5px; border: 1px solid var(--line); border-radius: 50%; }
-    .rail a[aria-current="true"] { color: var(--cyan); font-weight: 800; }
-    .rail a[aria-current="true"]::before { border-color: var(--cyan); background: var(--cyan); box-shadow: 0 0 0 4px color-mix(in srgb, var(--cyan) 15%, transparent); }
+    .layout { width: var(--page); margin: 0 auto; display: grid; grid-template-columns: 172px minmax(0, 1fr); gap: 42px; }
+    .sidenav {
+      position: sticky; top: calc(var(--nav-h) + 30px); height: max-content;
+      padding-top: 24px;
+    }
+    .sidenav__label { font-size: 10px; font-weight: 900; color: var(--faint); letter-spacing: .15em; text-transform: uppercase; }
+    .sidenav ol { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 3px; }
+    .sidenav a {
+      display: block; text-decoration: none; padding: 7px 0 7px 14px;
+      border-left: 1px solid var(--rule); color: var(--muted); font-size: 12px;
+      transition: color .18s ease, border-color .18s ease, padding .18s ease;
+    }
+    .sidenav a:hover { color: var(--ink); padding-left: 18px; }
+    .sidenav a[aria-current="true"] { color: var(--teal); border-left: 3px solid var(--teal); font-weight: 800; }
+    .progress { height: 2px; background: var(--rule-soft); margin-top: 18px; overflow: hidden; }
+    .progress > span { display: block; height: 100%; width: 0; background: var(--teal); transition: width .18s linear; }
 
     main { min-width: 0; }
-    .scene { min-height: 86vh; padding: 88px 0 78px; border-bottom: 1px solid var(--line-soft); position: relative; }
-    .scene:last-child { border-bottom: 0; }
-    .scene__header { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, .42fr); gap: 32px; align-items: end; margin-bottom: 44px; }
-    .eyebrow { font: 800 10.5px/1 var(--mono); letter-spacing: .13em; text-transform: uppercase; color: var(--cyan); margin-bottom: 15px; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 { font-size: clamp(44px, 6.8vw, 86px); line-height: 1.02; letter-spacing: -.055em; margin-bottom: 22px; max-width: 900px; text-wrap: balance; }
-    h2 { font-size: clamp(32px, 4.4vw, 56px); line-height: 1.08; letter-spacing: -.045em; margin-bottom: 0; text-wrap: balance; }
-    h3 { font-size: 20px; line-height: 1.3; letter-spacing: -.025em; }
-    .lead { color: var(--muted); font-size: clamp(17px, 1.8vw, 22px); max-width: 720px; }
-    .scene__note { padding-left: 17px; border-left: 2px solid var(--cyan); color: var(--muted); font-size: 13px; }
-    .micro { color: var(--faint); font-size: 11px; }
-    .detail-only { display: none; }
-    :root[data-detail="full"] .detail-only { display: block; }
-
-    /* Hero */
-    .hero-scene { min-height: calc(100vh - var(--nav-h)); padding-top: 54px; display: grid; align-content: center; }
-    .hero-surface {
-      background: var(--dark); color: #eef8fa; border: 1px solid var(--dark-line); min-height: 650px;
-      display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(430px, .97fr); overflow: hidden; box-shadow: var(--shadow);
+    section {
+      min-height: 78vh;
+      padding: 84px 0 72px;
+      border-bottom: 1px solid var(--rule-soft);
+      position: relative;
     }
-    .hero-copy { padding: clamp(38px, 5vw, 76px); display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; }
-    .hero-copy .eyebrow { color: #63cbd2; }
-    .hero-copy h1 { color: #f4fbfb; font-size: clamp(42px, 5.2vw, 72px); }
-    .hero-copy .lead { color: #aac0c6; }
-    .hero-copy__line { width: 84px; height: 3px; background: #63cbd2; margin: 32px 0; }
-    .hero-copy__statement { max-width: 550px; color: #d9e7e9; font-size: 15px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 34px; }
-    .hero-link { min-height: 44px; padding: 10px 15px; border: 1px solid #44616b; background: transparent; color: #eef8fa; text-decoration: none; font-size: 12px; font-weight: 800; display: inline-flex; align-items: center; }
-    .hero-link--primary { background: #63cbd2; color: #071820; border-color: #63cbd2; }
-    .field-stage { min-height: 650px; position: relative; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 55% 50%, rgba(34, 150, 161, .13), transparent 48%); }
-    .field-stage::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--dark), transparent 18%); pointer-events: none; }
-    .field-svg { width: 100%; height: 100%; min-height: 620px; display: block; }
-    .field-ring { fill: none; stroke: #365763; stroke-width: 1; }
-    .field-cross { stroke: #244651; stroke-width: 1; }
-    .field-ray { stroke: #63cbd2; stroke-width: 2.5; stroke-linecap: round; filter: drop-shadow(0 0 7px rgba(99,203,210,.65)); }
-    .field-pulse { fill: #f0a1a8; filter: drop-shadow(0 0 8px rgba(240,161,168,.7)); }
-    .field-node { cursor: pointer; }
-    .field-node circle { fill: #0c242e; stroke: #5a7d87; stroke-width: 1.4; transition: fill .2s, stroke .2s, transform .2s; transform-origin: center; }
-    .field-node text { fill: #dcecee; font-family: var(--font); font-size: 14px; font-weight: 700; pointer-events: none; }
-    .field-node:hover circle, .field-node[aria-pressed="true"] circle { fill: #15434d; stroke: #63cbd2; transform: scale(1.05); }
-    .field-caption { position: absolute; right: 28px; bottom: 24px; z-index: 3; max-width: 280px; border-left: 2px solid #63cbd2; padding-left: 14px; color: #aac0c6; font-size: 12px; }
-
-    /* Gap visual */
-    .gap-grid { display: grid; grid-template-columns: 1fr 120px 1fr; gap: 22px; align-items: stretch; }
-    .measure-column { background: var(--panel); border-top: 3px solid var(--cyan); padding: 28px; min-height: 350px; }
-    .measure-column--behavior { border-color: var(--red); }
-    .measure-column__label { font: 800 10px/1 var(--mono); letter-spacing: .1em; color: var(--faint); text-transform: uppercase; }
-    .measure-list { list-style: none; padding: 0; margin: 25px 0 0; display: grid; gap: 14px; }
-    .measure-list li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--line-soft); }
-    .measure-list li:last-child { border: 0; }
-    .measure-icon { width: 26px; height: 26px; border: 1px solid var(--cyan); border-radius: 50%; display: grid; place-items: center; color: var(--cyan); font: 800 10px/1 var(--mono); }
-    .measure-column--behavior .measure-icon { border-color: var(--red); color: var(--red); }
-    .gap-bridge { display: grid; align-content: center; justify-items: center; gap: 12px; color: var(--muted); text-align: center; }
-    .gap-bridge__axis { width: 1px; height: 140px; background: var(--line); position: relative; }
-    .gap-bridge__axis::before, .gap-bridge__axis::after { content: ""; position: absolute; left: 50%; width: 9px; height: 9px; border: 1px solid var(--line); border-radius: 50%; transform: translateX(-50%); background: var(--bg); }
-    .gap-bridge__axis::before { top: 0; } .gap-bridge__axis::after { bottom: 0; }
-    .gap-question { margin-top: 24px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; padding: 18px 20px; border: 1px solid var(--line); background: var(--paper); }
-    .gap-question strong { font-size: 17px; }
-    .gap-question span { font: 700 11px/1 var(--mono); color: var(--red); }
-
-    /* Hypothesis explorer */
-    .hypothesis-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 26px; }
-    .scenario-nav { border-top: 1px solid var(--line); }
-    .scenario-button { width: 100%; display: grid; grid-template-columns: 16px 1fr; gap: 12px; text-align: left; padding: 17px 4px; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--muted); }
-    .scenario-button::before { content: ""; width: 10px; height: 10px; margin-top: 5px; border: 1px solid var(--line); border-radius: 50%; }
-    .scenario-button[aria-selected="true"] { color: var(--cyan); font-weight: 800; }
-    .scenario-button[aria-selected="true"]::before { border-color: var(--cyan); background: var(--cyan); }
-    .scenario-button:hover { color: var(--ink); }
-    .hypothesis-panel { background: var(--panel); border: 1px solid var(--line); min-height: 510px; display: grid; grid-template-rows: auto minmax(260px, 1fr) auto; }
-    .hypothesis-top { display: flex; justify-content: space-between; gap: 18px; padding: 22px 24px 12px; }
-    .hypothesis-top__label { font: 800 10px/1 var(--mono); color: var(--faint); letter-spacing: .1em; text-transform: uppercase; }
-    .hypothesis-title { font-size: 22px; font-weight: 850; margin-top: 8px; }
-    .concept-badge { align-self: start; border: 1px solid var(--line); padding: 6px 8px; color: var(--faint); font: 700 9.5px/1 var(--mono); }
-    .curve-wrap { padding: 0 18px 0 8px; min-height: 300px; }
-    .curve-svg { width: 100%; height: 100%; display: block; overflow: visible; }
-    .gridline { stroke: var(--line-soft); stroke-width: 1; }
-    .axisline { stroke: var(--line); stroke-width: 1.2; }
-    .curve-eye { fill: none; stroke: var(--cyan); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
-    .curve-behavior { fill: none; stroke: var(--red); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
-    .curve-area { fill: color-mix(in srgb, var(--red) 10%, transparent); }
-    .curve-label { fill: var(--muted); font-family: var(--font); font-size: 12px; }
-    .curve-end-eye { fill: var(--cyan); } .curve-end-behavior { fill: var(--red); }
-    .hypothesis-result { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--line); }
-    .result-cell { padding: 20px 24px; }
-    .result-cell + .result-cell { border-left: 1px solid var(--line); }
-    .result-cell__head { font: 800 10px/1 var(--mono); color: var(--faint); letter-spacing: .1em; text-transform: uppercase; }
-    .result-cell p { margin: 9px 0 0; font-size: 13.5px; color: var(--ink-2); }
-    .outcome-strip { margin-top: 22px; display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); }
-    .outcome { padding: 20px; min-height: 132px; background: var(--paper); }
-    .outcome + .outcome { border-left: 1px solid var(--line); }
-    .outcome__head { font-weight: 850; color: var(--cyan); }
-    .outcome:nth-child(2) .outcome__head { color: var(--red); }
-    .outcome:nth-child(3) .outcome__head { color: var(--violet); }
-    .outcome p { margin: 9px 0 0; color: var(--muted); font-size: 12.5px; }
-
-    /* Pain network */
-    .pain-layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr); gap: 28px; }
-    .pain-map { background: var(--dark); min-height: 560px; position: relative; overflow: hidden; border: 1px solid var(--dark-line); }
-    .pain-svg { width: 100%; height: 100%; min-height: 560px; display: block; }
-    .pain-edge { stroke: #355560; stroke-width: 1.5; transition: stroke .2s, stroke-width .2s, opacity .2s; opacity: .7; }
-    .pain-edge.is-active { stroke: #f0a1a8; stroke-width: 3; opacity: 1; }
-    .pain-node { cursor: pointer; }
-    .pain-node circle { fill: #0d2832; stroke: #426570; stroke-width: 1.3; transition: fill .2s, stroke .2s, transform .2s; transform-origin: center; }
-    .pain-node text { fill: #dcecee; font-family: var(--font); font-size: 13px; font-weight: 700; pointer-events: none; }
-    .pain-node:hover circle, .pain-node[aria-pressed="true"] circle { fill: #412b32; stroke: #f0a1a8; transform: scale(1.04); }
-    .pain-center circle { fill: #173e47; stroke: #63cbd2; stroke-width: 2; }
-    .pain-center text { font-size: 15px; }
-    .pain-detail { border-top: 3px solid var(--red); background: var(--panel); min-height: 560px; padding: 27px; display: flex; flex-direction: column; }
-    .pain-detail__tag { font: 800 10px/1 var(--mono); color: var(--red); letter-spacing: .1em; text-transform: uppercase; }
-    .pain-detail h3 { margin: 14px 0 8px; font-size: 24px; }
-    .pain-detail p { color: var(--muted); font-size: 14px; }
-    .pain-detail__implication { margin-top: 16px; padding: 15px; background: var(--red-soft); border-left: 3px solid var(--red); font-size: 13px; }
-    .dev-pipeline { margin-top: auto; padding-top: 22px; border-top: 1px solid var(--line); }
-    .dev-pipeline__title { font: 800 10px/1 var(--mono); color: var(--faint); letter-spacing: .1em; text-transform: uppercase; }
-    .pipeline { margin-top: 14px; display: grid; gap: 8px; }
-    .pipeline-step { display: grid; grid-template-columns: 22px 1fr; gap: 9px; align-items: start; font-size: 12px; color: var(--ink-2); }
-    .pipeline-step span:first-child { width: 20px; height: 20px; border: 1px solid var(--line); border-radius: 50%; display: grid; place-items: center; font: 700 9px/1 var(--mono); color: var(--red); }
-
-    /* Roadmap */
-    .roadmap-wrap { position: relative; background: var(--panel); border: 1px solid var(--line); padding: 30px; }
-    .roadmap-stage { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 28px; align-items: stretch; }
-    .road-svg-wrap { min-height: 500px; position: relative; }
-    .road-svg { width: 100%; height: 100%; min-height: 500px; display: block; }
-    .road-mobile { display: none; }
-    .road-mobile-button { width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--line); background: transparent; padding: 15px 4px; display: grid; grid-template-columns: 14px 1fr; gap: 11px; color: var(--muted); }
-    .road-mobile-button::before { content: ""; width: 9px; height: 9px; border: 1px solid var(--line); border-radius: 50%; margin-top: 6px; }
-    .road-mobile-button[aria-pressed="true"] { color: var(--cyan); font-weight: 800; }
-    .road-mobile-button[aria-pressed="true"]::before { border-color: var(--cyan); background: var(--cyan); }
-    .road-path { fill: none; stroke: var(--line); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 6 8; }
-    .road-path-active { fill: none; stroke: var(--cyan); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 2000; stroke-dashoffset: var(--road-offset, 2000); transition: stroke-dashoffset .55s ease; }
-    .road-node { cursor: pointer; }
-    .road-node circle { fill: var(--panel); stroke: var(--line); stroke-width: 2; transition: fill .2s, stroke .2s, transform .2s; transform-origin: center; }
-    .road-node text { fill: var(--ink); font-family: var(--font); font-size: 13px; font-weight: 760; pointer-events: none; }
-    .road-node .node-small { fill: var(--muted); font-size: 10.5px; font-weight: 500; }
-    .road-node:hover circle, .road-node[aria-pressed="true"] circle { fill: var(--cyan-soft); stroke: var(--cyan); transform: scale(1.04); }
-    .road-node[data-tone="red"]:hover circle, .road-node[data-tone="red"][aria-pressed="true"] circle { fill: var(--red-soft); stroke: var(--red); }
-    .road-detail { border-left: 1px solid var(--line); padding-left: 26px; display: flex; flex-direction: column; }
-    .road-detail__phase { font: 800 10px/1 var(--mono); color: var(--cyan); letter-spacing: .11em; text-transform: uppercase; }
-    .road-detail h3 { font-size: 25px; margin: 14px 0 9px; }
-    .road-detail p { color: var(--muted); font-size: 14px; }
-    .road-detail ul { padding-left: 1.1em; color: var(--ink-2); font-size: 13px; display: grid; gap: 8px; }
-    .road-detail__output { margin-top: auto; border-top: 1px solid var(--line); padding-top: 16px; color: var(--muted); font-size: 12.5px; }
-    .feedback-band { margin-top: 20px; display: flex; align-items: center; gap: 18px; color: var(--muted); font-size: 12.5px; }
-    .feedback-band::before { content: "↺"; font-size: 28px; color: var(--red); }
-
-    /* Discussion */
-    .discussion-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
-    .question-row { padding: 24px 20px 24px 0; border-bottom: 1px solid var(--line); }
-    .question-row:nth-child(even) { padding-left: 24px; border-left: 1px solid var(--line); }
-    .question-row__head { color: var(--red); font-weight: 850; }
-    .question-row p { margin: 7px 0 0; color: var(--muted); font-size: 13.5px; }
-    .closing { margin-top: 40px; background: var(--red-soft); border-left: 4px solid var(--red); padding: 24px 27px; font-family: var(--font); font-size: 18px; font-weight: 750; line-height: 1.6; }
-
-    .toast { position: fixed; right: 18px; bottom: 18px; z-index: 200; background: var(--ink); color: var(--paper); padding: 11px 14px; font-size: 12px; opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .2s, transform .2s; }
-    .toast.is-visible { opacity: 1; transform: translateY(0); }
-
-    /* Presentation mode */
-    :root[data-mode="present"] body { background: var(--paper); }
-    :root[data-mode="present"] .shell { width: 100%; display: block; }
-    :root[data-mode="present"] .rail { display: none; }
-    :root[data-mode="present"] main { scroll-snap-type: y mandatory; }
-    :root[data-mode="present"] .scene { min-height: calc(100vh - var(--nav-h)); scroll-snap-align: start; padding-left: max(34px, calc((100vw - 1180px)/2)); padding-right: max(34px, calc((100vw - 1180px)/2)); }
-    :root[data-mode="present"] .hero-scene { padding-left: max(24px, calc((100vw - 1240px)/2)); padding-right: max(24px, calc((100vw - 1240px)/2)); }
-
-    @media (max-width: 1020px) {
-      :root { --page: min(930px, calc(100vw - 34px)); }
-      .shell { grid-template-columns: 1fr; }
-      .rail { display: none; }
-      .hero-surface { grid-template-columns: 1fr; }
-      .field-stage { min-height: 480px; }
-      .field-svg { min-height: 480px; }
-      .hypothesis-layout { grid-template-columns: 1fr; }
-      .scenario-nav { display: grid; grid-template-columns: repeat(3, 1fr); }
-      .scenario-button { border-right: 1px solid var(--line); padding: 14px 10px; }
-      .pain-layout, .roadmap-stage { grid-template-columns: 1fr; }
-      .road-detail { border-left: 0; border-top: 1px solid var(--line); padding: 22px 0 0; min-height: 260px; }
-      .pain-detail { min-height: 420px; }
+    section:last-child { border-bottom: 0; }
+    .eyebrow {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 22px;
+      color: var(--teal); font-weight: 900; font-size: 11px; letter-spacing: .11em;
     }
+    .eyebrow::before { content: ""; width: 20px; height: 3px; background: currentColor; }
+    h1, h2, h3 { font-family: var(--display); letter-spacing: -.035em; text-wrap: balance; }
+    h1 { font-size: clamp(40px, 6.3vw, 78px); line-height: 1.08; margin: 0; max-width: 920px; }
+    h2 { font-size: clamp(31px, 4.2vw, 51px); line-height: 1.15; margin: 0; max-width: 880px; }
+    h3 { font-size: 22px; line-height: 1.35; margin: 0; }
+    p { max-width: 68ch; }
+    .lede { font-size: clamp(18px, 2vw, 24px); line-height: 1.62; color: var(--muted); max-width: 760px; }
+    .micro { font-size: 12px; color: var(--faint); }
+    .accent { color: var(--teal); }
+    .accent-burgundy { color: var(--burgundy); }
 
-    @media (max-width: 720px) {
-      :root { --page: calc(100vw - 24px); --nav-h: 58px; }
-      .topbar__inner { gap: 8px; }
-      .brand__text { max-width: 150px; }
-      .control span { display: none; }
-      .control { padding: 7px 9px; }
-      .scene { min-height: auto; padding: 70px 0 58px; }
-      .scene__header { grid-template-columns: 1fr; margin-bottom: 30px; }
-      .hero-scene { padding-top: 16px; }
-      .hero-surface { min-height: 0; }
-      .hero-copy { padding: 34px 25px; }
-      .field-stage { min-height: 390px; }
-      .field-svg { min-height: 390px; }
-      .field-caption { left: 20px; right: 20px; bottom: 15px; }
-      .gap-grid { grid-template-columns: 1fr; }
-      .gap-bridge { min-height: 90px; }
-      .gap-bridge__axis { width: 130px; height: 1px; }
-      .gap-bridge__axis::before { left: 0; top: 50%; transform: translate(-50%, -50%); }
-      .gap-bridge__axis::after { right: 0; left: auto; bottom: auto; top: 50%; transform: translate(50%, -50%); }
-      .gap-question { grid-template-columns: 1fr; }
-      .scenario-nav { grid-template-columns: 1fr; }
-      .scenario-button { border-right: 0; }
-      .hypothesis-result, .outcome-strip, .discussion-grid { grid-template-columns: 1fr; }
-      .result-cell + .result-cell, .outcome + .outcome { border-left: 0; border-top: 1px solid var(--line); }
-      .pain-map { min-height: 430px; }
-      .pain-svg { min-height: 430px; }
-      .roadmap-wrap { padding: 18px 12px; }
-      .road-svg-wrap { display: none; }
-      .road-mobile { display: block; border-top: 1px solid var(--line); }
-      .road-detail { min-height: 0; }
-      .question-row:nth-child(even) { padding-left: 0; border-left: 0; }
-      h1 { font-size: clamp(40px, 13vw, 64px); }
-      h2 { font-size: clamp(30px, 9vw, 44px); }
+    .hero {
+      min-height: calc(100vh - var(--nav-h));
+      display: grid; align-content: center;
+      padding-top: 68px;
+    }
+    .hero__grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(260px, .55fr); gap: 52px; align-items: end; }
+    .hero__question { margin-top: 28px; }
+    .hero__note { margin-top: 36px; padding-left: 18px; border-left: 3px solid var(--teal); color: var(--muted); max-width: 620px; }
+    .translation-ladder { display: grid; gap: 0; align-self: stretch; padding-top: 40px; }
+    .ladder-node {
+      position: relative; min-height: 94px; padding: 21px 22px 18px;
+      background: var(--surface); border: 1px solid var(--rule);
+    }
+    .ladder-node + .ladder-node { border-top: 0; }
+    .ladder-node[data-tone="teal"] { border-color: var(--teal); }
+    .ladder-node[data-tone="burgundy"] { border-color: var(--burgundy); }
+    .ladder-node__kicker { font-size: 10px; font-weight: 900; color: var(--faint); letter-spacing: .13em; }
+    .ladder-node__title { margin-top: 6px; font-weight: 900; font-size: 17px; }
+    .ladder-arrow { height: 28px; display: grid; place-items: center; color: var(--faint); font-family: var(--mono); }
+    .ladder-arrow::before { content: "↓ ?"; }
+    .hero__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 42px; }
+    .primary-link, .secondary-link {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 46px;
+      padding: 10px 17px; text-decoration: none; border: 1px solid var(--ink); font-weight: 900; font-size: 13px;
+    }
+    .primary-link { background: var(--ink); color: var(--paper); }
+    .secondary-link { color: var(--ink); background: transparent; border-color: var(--rule); }
+
+    .split-compare { display: grid; grid-template-columns: 1fr 92px 1fr; gap: 24px; margin-top: 48px; align-items: stretch; }
+    .compare-panel { padding: 30px; background: var(--surface); border-top: 3px solid var(--teal); border-bottom: 1px solid var(--rule); }
+    .compare-panel--burgundy { border-top-color: var(--burgundy); }
+    .compare-panel__label { font-size: 11px; font-weight: 900; color: var(--faint); letter-spacing: .09em; }
+    .compare-panel ul { margin: 22px 0 0; padding-left: 1.1em; display: grid; gap: 10px; }
+    .compare-panel li::marker { color: var(--teal); }
+    .compare-panel--burgundy li::marker { color: var(--burgundy); }
+    .compare-equals { display: grid; place-items: center; text-align: center; color: var(--muted); font-family: var(--mono); font-weight: 800; }
+    .question-strip { margin-top: 30px; padding: 17px 20px; border: 1px solid var(--rule); background: color-mix(in srgb, var(--surface) 74%, transparent); font-size: 17px; font-weight: 800; }
+
+    .program-map { margin-top: 50px; position: relative; }
+    .foundation-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 640px; }
+    .foundation-card { padding: 24px; border: 1px solid var(--teal); background: var(--teal-soft); }
+    .foundation-card--pain { border-color: var(--burgundy); background: var(--burgundy-soft); }
+    .foundation-card__tag { font-size: 10px; font-weight: 900; letter-spacing: .12em; color: var(--teal); }
+    .foundation-card--pain .foundation-card__tag { color: var(--burgundy); }
+    .foundation-card h3 { margin-top: 9px; font-family: var(--body); font-size: 19px; letter-spacing: -.025em; }
+    .roadline { margin-top: 32px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .roadnode { padding: 28px 20px; min-height: 156px; border-right: 1px solid var(--rule); background: color-mix(in srgb, var(--surface) 66%, transparent); }
+    .roadnode:last-child { border-right: 0; }
+    .roadnode__mark { font-family: var(--display); color: var(--teal); font-size: 28px; }
+    .roadnode h3 { margin-top: 14px; font-family: var(--body); font-size: 17px; }
+    .roadnode p { font-size: 12px; color: var(--muted); margin-bottom: 0; }
+    .feedback-line { margin-top: 18px; display: flex; justify-content: flex-end; align-items: center; gap: 14px; color: var(--muted); font-size: 12px; }
+    .feedback-line::before { content: "↶"; font-family: var(--display); font-size: 28px; color: var(--burgundy); }
+
+    .foundation-section { min-height: auto; }
+    .foundation-intro { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 34px; align-items: start; margin-top: 30px; }
+    .premise { padding: 24px 26px; background: var(--teal-soft); border-left: 4px solid var(--teal); font-weight: 900; }
+    .premise--pain { background: var(--burgundy-soft); border-left-color: var(--burgundy); }
+    .quick-index { padding: 20px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .quick-index strong { display: block; margin-bottom: 8px; font-size: 12px; color: var(--faint); letter-spacing: .08em; }
+    .quick-index span { display: block; font-family: var(--display); font-size: 22px; line-height: 1.35; }
+
+    .tabs { margin-top: 36px; }
+    .tablist { display: flex; flex-wrap: wrap; gap: 0; border-bottom: 1px solid var(--rule); }
+    .tab-button {
+      border: 0; border-bottom: 3px solid transparent; background: transparent; color: var(--muted);
+      padding: 13px 15px 11px; cursor: pointer; font-weight: 900; font-size: 13px;
+    }
+    .tab-button[aria-selected="true"] { color: var(--teal); border-bottom-color: var(--teal); }
+    .tab-panel { padding: 34px 0 8px; }
+    .tab-panel[hidden] { display: none; }
+    .hypothesis-layout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(300px, 1.2fr); gap: 38px; align-items: start; }
+    .hypothesis-claim { font-family: var(--display); font-size: clamp(25px, 3vw, 38px); line-height: 1.35; }
+    .hypothesis-detail { border-left: 1px solid var(--rule); padding-left: 28px; color: var(--muted); }
+    .hypothesis-detail strong { color: var(--ink); }
+    .task-scale { display: grid; gap: 7px; margin-top: 18px; }
+    .task-row { display: grid; grid-template-columns: minmax(120px, .75fr) minmax(160px, 1.25fr); gap: 14px; align-items: center; }
+    .task-row__bar { height: 9px; background: var(--rule-soft); position: relative; overflow: hidden; }
+    .task-row__bar span { display: block; height: 100%; background: var(--teal); }
+    .task-row:nth-child(2) .task-row__bar span { background: color-mix(in srgb, var(--teal) 74%, var(--burgundy)); }
+    .task-row:nth-child(3) .task-row__bar span { background: var(--burgundy); }
+    .task-row__label { font-size: 12px; font-weight: 800; }
+
+    .outcome-grid { margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--rule); }
+    .outcome { min-height: 230px; padding: 24px; background: var(--surface); border-right: 1px solid var(--rule); }
+    .outcome:last-child { border-right: 0; }
+    .outcome__condition { font-size: 11px; color: var(--faint); font-weight: 900; letter-spacing: .08em; }
+    .outcome__arrow { margin: 17px 0; color: var(--teal); font-size: 23px; }
+    .outcome h3 { font-family: var(--body); font-size: 17px; letter-spacing: -.02em; }
+    .outcome p { font-size: 13px; color: var(--muted); }
+
+    .confound-lab { margin-top: 42px; display: grid; grid-template-columns: minmax(290px, .82fr) minmax(0, 1.18fr); gap: 34px; }
+    .cause-map { position: relative; min-height: 430px; border: 1px solid var(--rule); background: var(--surface); overflow: hidden; }
+    .cause-map::before, .cause-map::after { content: ""; position: absolute; background: var(--rule-soft); }
+    .cause-map::before { width: 1px; height: 68%; left: 50%; top: 16%; }
+    .cause-map::after { height: 1px; width: 72%; left: 14%; top: 50%; }
+    .cause-center { position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); width: 168px; min-height: 94px; display: grid; place-items: center; text-align: center; background: var(--ink); color: var(--paper); padding: 14px; font-weight: 900; z-index: 2; }
+    .cause-button {
+      position: absolute; width: 138px; min-height: 68px; border: 1px solid var(--rule); background: var(--surface-strong); cursor: pointer; padding: 10px; font-weight: 900; font-size: 12px; z-index: 3;
+    }
+    .cause-button[aria-pressed="true"] { border-color: var(--burgundy); background: var(--burgundy-soft); color: var(--burgundy); }
+    .cause-button[data-cause="vision"] { left: 8%; top: 11%; }
+    .cause-button[data-cause="pain"] { right: 8%; top: 11%; }
+    .cause-button[data-cause="context"] { left: 8%; bottom: 11%; }
+    .cause-button[data-cause="medication"] { right: 8%; bottom: 11%; }
+    .cause-detail { padding: 26px; border-top: 3px solid var(--burgundy); background: var(--surface); min-height: 430px; }
+    .cause-detail__tag { color: var(--burgundy); font-size: 11px; font-weight: 900; letter-spacing: .09em; }
+    .cause-detail h3 { margin-top: 18px; font-size: 28px; }
+    .cause-detail p { color: var(--muted); }
+    .cause-detail ul { padding-left: 1.15em; display: grid; gap: 8px; }
+    .cause-detail li::marker { color: var(--burgundy); }
+
+    .development-list { margin-top: 42px; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); }
+    .development-list article { padding: 22px 22px 22px 0; border-bottom: 1px solid var(--rule); }
+    .development-list article:nth-child(odd) { border-right: 1px solid var(--rule); padding-right: 28px; }
+    .development-list article:nth-child(even) { padding-left: 28px; }
+    .development-list strong { display: block; color: var(--burgundy); font-size: 12px; margin-bottom: 6px; }
+
+    .bridge { display: grid; grid-template-columns: 1fr 160px 1fr; gap: 22px; margin-top: 46px; align-items: center; }
+    .bridge-card { padding: 30px; min-height: 250px; border: 1px solid var(--teal); background: var(--teal-soft); }
+    .bridge-card--pain { border-color: var(--burgundy); background: var(--burgundy-soft); }
+    .bridge-card h3 { font-family: var(--body); font-size: 18px; }
+    .bridge-card ul { padding-left: 1.15em; }
+    .bridge-center { text-align: center; }
+    .bridge-center__line { height: 1px; background: var(--rule); position: relative; }
+    .bridge-center__line::after { content: "↔"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -53%); background: var(--paper); padding: 0 11px; color: var(--burgundy); font-size: 23px; }
+    .bridge-center strong { display: block; margin-top: 22px; font-family: var(--display); font-size: 20px; }
+
+    .roadmap-explorer { margin-top: 44px; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 32px; }
+    .stage-list { display: grid; gap: 0; border-top: 1px solid var(--rule); }
+    .stage-button { text-align: left; border: 0; border-bottom: 1px solid var(--rule); background: transparent; padding: 16px 12px; cursor: pointer; color: var(--muted); }
+    .stage-button strong { display: block; font-size: 14px; color: inherit; }
+    .stage-button small { display: block; margin-top: 4px; }
+    .stage-button[aria-selected="true"] { color: var(--teal); background: var(--teal-soft); padding-left: 18px; }
+    .stage-panel { background: var(--surface); border-top: 3px solid var(--teal); padding: 32px; min-height: 350px; }
+    .stage-panel__tag { color: var(--teal); font-weight: 900; font-size: 11px; letter-spacing: .1em; }
+    .stage-panel h3 { font-size: 31px; margin-top: 14px; }
+    .stage-panel ul { padding-left: 1.2em; display: grid; gap: 10px; color: var(--muted); }
+    .stage-panel__next { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); }
+
+    .discussion-grid { margin-top: 42px; display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--rule); }
+    .question-item { padding: 24px 26px 24px 0; border-bottom: 1px solid var(--rule); }
+    .question-item:nth-child(odd) { border-right: 1px solid var(--rule); padding-right: 30px; }
+    .question-item:nth-child(even) { padding-left: 30px; }
+    .question-item__label { font-size: 11px; color: var(--burgundy); font-weight: 900; letter-spacing: .08em; }
+    .question-item p { margin: 9px 0 0; font-size: 16px; max-width: 48ch; }
+    .closing-note { margin-top: 42px; padding: 26px 30px; border: 1px solid var(--burgundy); background: var(--burgundy-soft); font-family: var(--body); font-size: clamp(18px, 2.15vw, 24px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.62; }
+
+    details { border-top: 1px solid var(--rule); padding: 14px 0; }
+    details:last-child { border-bottom: 1px solid var(--rule); }
+    summary { cursor: pointer; font-weight: 900; color: var(--ink); }
+    details p { color: var(--muted); }
+    :root[data-density="concise"] .detail-only { display: none !important; }
+    :root[data-density="expanded"] .detail-only { display: block; }
+
+    .toast {
+      position: fixed; right: 22px; bottom: 22px; z-index: 80;
+      padding: 11px 14px; background: var(--ink); color: var(--paper); box-shadow: var(--shadow);
+      transform: translateY(180%); opacity: 0; transition: transform .22s ease, opacity .22s ease;
+    }
+    .toast[data-show="true"] { transform: translateY(0); opacity: 1; }
+
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 960px) {
+      :root { --page: min(100% - 28px, 760px); }
+      .layout { grid-template-columns: 1fr; }
+      .sidenav { display: none; }
+      .hero__grid, .foundation-intro, .confound-lab, .roadmap-explorer { grid-template-columns: 1fr; }
+      .translation-ladder { max-width: 460px; }
+      .split-compare { grid-template-columns: 1fr; }
+      .compare-equals { min-height: 72px; }
+      .compare-equals::before { content: "↓"; }
+      .roadline { grid-template-columns: 1fr 1fr; }
+      .roadnode:nth-child(2) { border-right: 0; }
+      .roadnode:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+      .outcome-grid { grid-template-columns: 1fr; }
+      .outcome { border-right: 0; border-bottom: 1px solid var(--rule); min-height: 0; }
+      .outcome:last-child { border-bottom: 0; }
+      .bridge { grid-template-columns: 1fr; }
+      .bridge-center { min-height: 80px; display: grid; align-content: center; }
+      .bridge-center__line { transform: rotate(90deg); width: 66px; justify-self: center; }
+      .discussion-grid { grid-template-columns: 1fr; }
+      .question-item:nth-child(odd), .question-item:nth-child(even) { border-right: 0; padding-left: 0; padding-right: 0; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .001ms !important; animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+    @media (max-width: 640px) {
+      :root { --page: calc(100% - 24px); --nav-h: 54px; }
+      body::before { display: none; }
+      .brand__text { max-width: 160px; font-size: 11px; }
+      .share-button { display: none; }
+      .density-button { max-width: 86px; padding-inline: 8px; }
+      section { min-height: auto; padding: 62px 0 58px; }
+      .hero { min-height: calc(100svh - var(--nav-h)); }
+      h1 { font-size: clamp(37px, 12vw, 58px); }
+      h2 { font-size: clamp(29px, 9vw, 40px); }
+      .hero__grid { gap: 18px; }
+      .translation-ladder { padding-top: 12px; }
+      .ladder-node { min-height: 74px; padding: 15px 17px; }
+      .split-compare, .program-map, .outcome-grid, .confound-lab, .bridge, .roadmap-explorer, .discussion-grid { margin-top: 32px; }
+      .compare-panel { padding: 22px; }
+      .foundation-pair { grid-template-columns: 1fr; }
+      .roadline { grid-template-columns: 1fr; }
+      .roadnode { border-right: 0; border-bottom: 1px solid var(--rule); min-height: 0; }
+      .roadnode:last-child { border-bottom: 0; }
+      .foundation-intro { gap: 20px; }
+      .hypothesis-layout { grid-template-columns: 1fr; gap: 20px; }
+      .hypothesis-detail { border-left: 0; border-top: 1px solid var(--rule); padding: 20px 0 0; }
+      .tablist { overflow-x: auto; flex-wrap: nowrap; }
+      .tab-button { white-space: nowrap; }
+      .cause-map { min-height: 360px; }
+      .cause-button { width: 112px; font-size: 11px; }
+      .cause-center { width: 132px; min-height: 82px; font-size: 12px; }
+      .development-list { grid-template-columns: 1fr; }
+      .development-list article:nth-child(odd), .development-list article:nth-child(even) { border-right: 0; padding-left: 0; padding-right: 0; }
+      .roadmap-explorer { gap: 18px; }
+      .stage-list { grid-template-columns: repeat(4, minmax(170px, 1fr)); overflow-x: auto; }
+      .stage-button { border-right: 1px solid var(--rule); }
+      .stage-panel { padding: 24px 20px; }
+      .controls { gap: 5px; }
+      .icon-button { width: 36px; min-height: 36px; }
+      .density-button { min-height: 36px; font-size: 10px; }
     }
 
     @media print {
-      .topbar, .rail, .scroll-progress, .hero-actions, .toast { display: none !important; }
-      body { background: white; color: #111; }
-      .shell { width: 100%; display: block; }
-      .scene { min-height: auto; break-inside: avoid; padding: 35px 0; }
-      .hero-surface, .pain-map { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .topbar, .sidenav, .hero__actions, .toast { display: none !important; }
+      :root { --paper: #fff; --surface: #fff; --surface-strong: #fff; --ink: #111; --muted: #444; --rule: #aaa; --rule-soft: #ddd; }
+      body { background: #fff; }
+      body::before { display: none; }
+      .layout { display: block; width: 100%; }
+      section { min-height: 0; break-inside: avoid; padding: 34px 0; }
+      .reveal { opacity: 1 !important; transform: none !important; }
       .detail-only { display: block !important; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    /* Cataract recovery graph — added to the rolled-back Clinical Editorial version */
+    .recovery-graph {
+      margin-top: 28px;
+      border: 1px solid var(--rule);
+      background: var(--surface-strong);
+    }
+    .recovery-graph__head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 22px 12px;
+      border-bottom: 1px solid var(--rule-soft);
+    }
+    .recovery-graph__eyebrow {
+      color: var(--faint);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .recovery-graph__title {
+      margin-top: 5px;
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+    .recovery-graph__badge {
+      flex: 0 0 auto;
+      border: 1px solid var(--rule);
+      padding: 5px 8px;
+      color: var(--faint);
+      font-family: var(--mono);
+      font-size: 9.5px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .recovery-graph__body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 230px;
+      min-height: 330px;
+    }
+    .recovery-graph__plot {
+      min-width: 0;
+      padding: 10px 16px 4px 8px;
+    }
+    .recovery-graph__svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      overflow: visible;
+    }
+    .recovery-gridline { stroke: var(--rule-soft); stroke-width: 1; }
+    .recovery-axis { stroke: var(--rule); stroke-width: 1.2; }
+    .recovery-eye {
+      fill: none;
+      stroke: var(--teal);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .recovery-behavior {
+      fill: none;
+      stroke: var(--burgundy);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .recovery-gap {
+      fill: color-mix(in srgb, var(--burgundy) 12%, transparent);
+    }
+    .recovery-label {
+      fill: var(--muted);
+      font-family: var(--body);
+      font-size: 12px;
+    }
+    .recovery-end-eye { fill: var(--teal); }
+    .recovery-end-behavior { fill: var(--burgundy); }
+    .recovery-graph__aside {
+      display: grid;
+      align-content: center;
+      gap: 18px;
+      padding: 24px 22px;
+      border-left: 1px solid var(--rule-soft);
+      background: var(--surface);
+    }
+    .recovery-legend {
+      display: grid;
+      gap: 9px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .recovery-legend span {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .recovery-legend i {
+      display: inline-block;
+      width: 28px;
+      height: 3px;
+      background: var(--teal);
+    }
+    .recovery-legend span:last-child i { background: var(--burgundy); }
+    .recovery-graph__summary {
+      margin: 0;
+      color: var(--ink);
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+    .recovery-graph__summary strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--teal);
+      font-size: 14px;
+    }
+    .recovery-graph__note {
+      margin: 0;
+      color: var(--faint);
+      font-size: 10.5px;
+      line-height: 1.55;
+    }
+    @media (max-width: 760px) {
+      .recovery-graph__head { display: grid; gap: 10px; }
+      .recovery-graph__badge { justify-self: start; }
+      .recovery-graph__body { grid-template-columns: 1fr; }
+      .recovery-graph__plot { padding: 6px 6px 0; }
+      .recovery-graph__svg { min-height: 260px; }
+      .recovery-graph__aside {
+        border-left: 0;
+        border-top: 1px solid var(--rule-soft);
+        padding: 18px 20px;
+      }
+    }
+
+  
+    /* Roadmap-focused sections */
+    .program-roadmap, .interpretation-roadmap, .milestone-roadmap { margin-top: 36px; }
+    .program-roadmap { padding: 28px; border: 1px solid var(--rule); background: color-mix(in srgb, var(--surface) 82%, var(--paper)); }
+    .roadmap-zone-label { margin-bottom: 12px; color: var(--muted); font-size: 11px; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; }
+    .foundation-lanes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .foundation-lane, .shared-baseline, .road-milestone, .roadmap-return, .interpretation-stop, .milestone-trigger {
+      appearance: none; color: var(--ink); font: inherit; cursor: pointer; text-align: left;
+    }
+    .foundation-lane { min-height: 132px; padding: 20px; border: 1px solid var(--teal); background: var(--surface); }
+    .foundation-lane--pain { border-color: var(--burgundy); }
+    .foundation-lane__tag { display: block; margin-bottom: 9px; color: var(--teal); font-size: 11px; font-weight: 900; letter-spacing: .08em; }
+    .foundation-lane--pain .foundation-lane__tag { color: var(--burgundy); }
+    .foundation-lane strong { display: block; font-size: 18px; line-height: 1.28; }
+    .foundation-lane small { display: block; margin-top: 12px; color: var(--muted); }
+    .foundation-lane.is-active, .foundation-lane:hover { background: var(--teal-soft); box-shadow: var(--shadow); }
+    .foundation-lane--pain.is-active, .foundation-lane--pain:hover { background: var(--burgundy-soft); }
+
+    .roadmap-merge { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; margin: 18px 8%; color: var(--muted); font-size: 12px; }
+    .roadmap-merge span { height: 1px; background: var(--rule-strong); }
+    .shared-baseline { display: block; width: min(720px, 90%); margin: 0 auto 30px; padding: 15px 18px; border: 1px dashed var(--rule-strong); background: var(--paper); text-align: center; }
+    .shared-baseline strong, .shared-baseline small { display: block; }
+    .shared-baseline small { margin-top: 5px; color: var(--muted); }
+    .shared-baseline.is-active, .shared-baseline:hover { border-color: var(--teal); color: var(--teal); }
+
+    .program-road { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; padding-top: 30px; }
+    .program-road::before { content: ''; position: absolute; top: 15px; left: 8%; right: 8%; height: 4px; border-radius: 999px; background: linear-gradient(90deg, var(--teal), var(--rule-strong) 52%, var(--burgundy)); }
+    .road-milestone { position: relative; min-height: 142px; padding: 20px 16px 16px; border: 1px solid var(--rule); background: var(--surface); }
+    .road-milestone::before { content: ''; position: absolute; top: -23px; left: 50%; width: 14px; height: 14px; border: 4px solid var(--paper); border-radius: 50%; background: var(--teal); transform: translateX(-50%); box-shadow: 0 0 0 1px var(--teal); }
+    .road-milestone__phase { display: block; margin-bottom: 11px; color: var(--teal); font-size: 11px; font-weight: 900; letter-spacing: .08em; }
+    .road-milestone strong { display: block; font-size: 16px; line-height: 1.28; }
+    .road-milestone small { display: block; margin-top: 10px; color: var(--muted); }
+    .road-milestone.is-active, .road-milestone:hover { border-color: var(--teal); background: var(--teal-soft); box-shadow: var(--shadow); }
+    .roadmap-return { display: flex; gap: 12px; align-items: center; width: 100%; margin-top: 20px; padding: 13px 16px; border: 0; border-top: 1px solid var(--rule); background: transparent; color: var(--muted); }
+    .roadmap-return span { font-size: 22px; color: var(--teal); }
+    .roadmap-return.is-active, .roadmap-return:hover { color: var(--teal); background: var(--teal-soft); }
+
+    .roadmap-detail { margin-top: 24px; padding: 24px 26px; border-left: 4px solid var(--teal); background: var(--surface); box-shadow: var(--shadow); }
+    .roadmap-detail__tag { color: var(--teal); font-size: 11px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .roadmap-detail h3 { margin: 10px 0 8px; font-size: clamp(24px, 2.8vw, 32px); }
+    .roadmap-detail p, .roadmap-detail li { color: var(--muted); }
+    .roadmap-detail ul { display: grid; gap: 8px; padding-left: 1.2em; }
+    .roadmap-detail__outcome { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 13px; }
+    .roadmap-detail--bridge { border-left-color: var(--burgundy); }
+
+    .interpretation-roadmap { padding: 28px; border: 1px solid var(--rule); background: color-mix(in srgb, var(--surface) 82%, var(--paper)); }
+    .interpretation-road { display: grid; grid-template-columns: minmax(150px,.8fr) auto minmax(250px,1.25fr) auto minmax(290px,1.35fr) auto minmax(150px,.8fr); gap: 12px; align-items: stretch; }
+    .interpretation-stop { min-height: 176px; padding: 17px; border: 1px solid var(--rule); background: var(--surface); }
+    .interpretation-stop--wide { min-width: 0; }
+    .interpretation-stop__number { display: inline-grid; place-items: center; width: 28px; height: 28px; margin-bottom: 9px; border-radius: 50%; background: var(--teal-soft); color: var(--teal); font-weight: 900; }
+    .interpretation-stop__label { display: block; margin-bottom: 10px; color: var(--muted); font-size: 11px; font-weight: 900; letter-spacing: .08em; }
+    .interpretation-stop strong { display: block; font-size: 17px; line-height: 1.3; }
+    .interpretation-stop small { display: block; margin-top: 10px; color: var(--muted); }
+    .interpretation-stop.is-active, .interpretation-stop:hover { border-color: var(--burgundy); background: var(--burgundy-soft); box-shadow: var(--shadow); }
+    .interpretation-arrow { align-self: center; color: var(--rule-strong); font-size: 25px; }
+    .reference-lanes { display: grid; gap: 10px; }
+    .reference-lanes span { display: block; padding: 10px; border-left: 3px solid var(--teal); background: var(--teal-soft); font-size: 13px; line-height: 1.35; }
+    .reference-lanes .reference-lanes__pain { border-left-color: var(--burgundy); background: var(--burgundy-soft); }
+    .reference-lanes b { display: inline-grid; place-items: center; width: 22px; height: 22px; margin-right: 6px; border-radius: 50%; background: var(--surface); }
+    .cause-signs { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 7px; }
+    .cause-signs span { padding: 8px; border: 1px solid var(--rule); background: var(--paper); font-size: 12px; }
+    .cause-signs span:last-child { grid-column: 1 / -1; text-align: center; }
+
+    .milestone-roadmap { position: relative; max-width: 920px; margin-left: auto; margin-right: auto; padding-left: 42px; }
+    .milestone-roadmap__spine { position: absolute; top: 26px; bottom: 34px; left: 18px; width: 2px; background: var(--rule); }
+    .milestone-item { position: relative; margin-bottom: 0; border: 1px solid var(--rule); background: var(--surface); }
+    .milestone-item.is-active { border-color: var(--teal); box-shadow: var(--shadow); }
+    .milestone-trigger { display: grid; grid-template-columns: auto minmax(0,1fr) auto; gap: 16px; align-items: center; width: 100%; padding: 20px; border: 0; background: transparent; }
+    .milestone-marker { position: absolute; left: -34px; display: grid; place-items: center; width: 22px; height: 22px; border: 4px solid var(--paper); border-radius: 50%; background: var(--surface); box-shadow: 0 0 0 2px var(--rule-strong); }
+    .milestone-item.is-active .milestone-marker { background: var(--teal); color: white; box-shadow: 0 0 0 2px var(--teal); }
+    .milestone-marker b { font-size: 10px; }
+    .milestone-heading small, .milestone-heading strong, .milestone-heading em { display: block; }
+    .milestone-heading small { margin-bottom: 5px; color: var(--teal); font-size: 11px; font-weight: 900; letter-spacing: .08em; }
+    .milestone-heading strong { font-size: 19px; }
+    .milestone-heading em { margin-top: 6px; color: var(--muted); font-size: 13px; font-style: normal; }
+    .milestone-toggle { color: var(--muted); font-size: 12px; }
+    .milestone-panel { padding: 0 20px 20px 62px; border-top: 1px solid var(--rule); }
+    .milestone-panel ul { display: grid; gap: 8px; color: var(--muted); }
+    .milestone-gate { margin: 9px 0 9px 20px; padding: 10px 14px; border-left: 2px dashed var(--rule-strong); color: var(--muted); }
+    .milestone-gate span { display: block; margin-bottom: 3px; color: var(--burgundy); font-size: 10px; font-weight: 900; letter-spacing: .08em; }
+    .milestone-gate strong { font-size: 12px; }
+    .milestone-return { margin: 14px 0 0 20px; padding: 15px 16px; border: 1px dashed var(--teal); background: var(--teal-soft); }
+    .milestone-return span { display: block; margin-bottom: 4px; color: var(--teal); font-size: 10px; font-weight: 900; letter-spacing: .08em; }
+    .milestone-return strong { font-size: 13px; color: var(--muted); }
+
+    @media (max-width: 1080px) {
+      .interpretation-road { grid-template-columns: 1fr; }
+      .interpretation-arrow { transform: rotate(90deg); justify-self: center; }
+      .interpretation-stop { min-height: 0; }
+    }
+    @media (max-width: 860px) {
+      .program-road { grid-template-columns: repeat(2, minmax(0,1fr)); row-gap: 40px; }
+      .program-road::before { display: none; }
+      .road-milestone::before { top: -16px; }
+    }
+    @media (max-width: 640px) {
+      .program-roadmap, .interpretation-roadmap { padding: 18px; }
+      .foundation-lanes, .program-road, .cause-signs { grid-template-columns: 1fr; }
+      .cause-signs span:last-child { grid-column: auto; }
+      .milestone-roadmap { padding-left: 30px; }
+      .milestone-roadmap__spine { left: 10px; }
+      .milestone-marker { left: -28px; }
+      .milestone-trigger { grid-template-columns: minmax(0,1fr); padding: 18px; }
+      .milestone-toggle { display: none; }
+      .milestone-panel { padding: 0 18px 18px 30px; }
+    }
+
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">본문으로 이동</a>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
   <header class="topbar">
     <div class="topbar__inner">
-      <a class="brand" href="#question" aria-label="첫 화면으로 이동">
-        <span class="brand__glyph" aria-hidden="true"></span>
-        <span class="brand__text">수의안과 기능적 시각행동 연구</span>
-      </a>
-      <div class="top-actions" aria-label="보기 설정">
-        <button class="control" id="detailToggle" type="button" aria-pressed="false" title="세부 설명 전환">상세 <span>보기</span></button>
-        <button class="control" id="presentToggle" type="button" aria-pressed="false" title="발표 모드 전환">발표 <span>모드</span></button>
-        <button class="control control--icon" id="themeToggle" type="button" aria-label="어두운 테마로 전환" title="테마 전환">◐</button>
-        <button class="control" id="copyLink" type="button" title="현재 섹션 링크 복사">링크 <span>복사</span></button>
+      <div class="brand" aria-label="페이지 제목">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">수의안과 기능적 시각행동 연구 로드맵</span>
+      </div>
+      <div class="controls" aria-label="페이지 설정">
+        <button class="density-button" id="densityButton" type="button" aria-pressed="false">상세 내용 보기</button>
+        <button class="share-button" id="shareButton" type="button">현재 위치 공유</button>
+        <button class="icon-button" id="themeButton" type="button" aria-label="어두운 테마로 전환" title="테마 전환">
+          <span aria-hidden="true">◐</span>
+        </button>
       </div>
     </div>
   </header>
-  <div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
 
-  <div class="shell">
-    <nav class="rail" aria-label="연구 로드맵 섹션">
-      <div class="rail__label">Research path</div>
+  <div class="layout">
+    <nav class="sidenav" aria-label="연구 로드맵 목차">
+      <div class="sidenav__label">Research path</div>
       <ol>
         <li><a href="#question">출발 질문</a></li>
-        <li><a href="#gap">측정의 공백</a></li>
-        <li><a href="#cataract">백내장 회복 가설</a></li>
-        <li><a href="#pain">통증 원인 분해</a></li>
-        <li><a href="#roadmap">연구 프로그램</a></li>
+        <li><a href="#context">문제의식</a></li>
+        <li><a href="#program">전체 구조</a></li>
+        <li><a href="#cataract">백내장 기반 연구</a></li>
+        <li><a href="#pain">통증 기반 연구</a></li>
+        <li><a href="#bridge">두 연구의 연결</a></li>
+        <li><a href="#roadmap">단계별 확장</a></li>
         <li><a href="#discussion">면담 질문</a></li>
       </ol>
+      <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
     </nav>
 
     <main id="main">
-      <section class="scene hero-scene" id="question" data-nav="출발 질문">
-        <div class="hero-surface">
-          <div class="hero-copy">
-            <div class="eyebrow">Research question</div>
-            <h1>안과 치료가 성공하면,<br />환자는 바로 다시 잘 볼까?</h1>
-            <div class="hero-copy__line" aria-hidden="true"></div>
-            <p class="lead">안구 구조와 생리의 회복이 실제 시각 사용과 생활 적응으로 언제, 어떤 조건에서 번역되는지 묻습니다.</p>
-            <p class="hero-copy__statement detail-only">이 연구는 행동지연을 미리 전제하지 않습니다. 빠른 동시 회복과 지연 회복, 과제별 차이 모두를 임상적으로 해석할 수 있는 구조를 만듭니다.</p>
-            <div class="hero-actions">
-              <a class="hero-link hero-link--primary" href="#gap">질문이 나온 배경 보기</a>
-              <a class="hero-link" href="#roadmap">전체 연구 경로 보기</a>
+      <section class="hero" id="question" data-section="question">
+        <div class="hero__grid">
+          <div>
+            <div class="eyebrow">연구의 출발점</div>
+            <h1>안과 치료가 성공하면,<br /><span class="accent">환자는 바로 다시 잘 볼까?</span></h1>
+            <p class="lede hero__question">안구 구조와 생리의 회복이 실제 시각 사용과 생활 적응으로 언제, 어떤 조건에서 번역되는지를 묻습니다.</p>
+            <p class="hero__note">이 연구 프로그램은 행동지연이 반드시 존재한다고 가정하지 않습니다. 함께 회복하는 경우와 어긋나는 경우를 모두 임상적으로 해석하는 것이 목적입니다.</p>
+            <div class="hero__actions">
+              <a class="primary-link" href="#program">전체 흐름 보기</a>
+              <a class="secondary-link" href="#cataract">두 기반 연구부터 보기</a>
             </div>
           </div>
-          <div class="field-stage" aria-label="안구 상태, 기능적 시각행동, 생활 적응의 관계를 나타내는 인터랙티브 시야 도식">
-            <svg class="field-svg" viewBox="0 0 620 650" role="img" aria-labelledby="fieldTitle fieldDesc">
-              <title id="fieldTitle">회복의 세 층위</title>
-              <desc id="fieldDesc">안구 상태, 기능적 시각행동, 생활 적응의 세 노드가 시야검사형 동심원 위에서 연결되어 있다.</desc>
-              <g aria-hidden="true">
-                <circle class="field-ring" cx="315" cy="320" r="235" />
-                <circle class="field-ring" cx="315" cy="320" r="175" />
-                <circle class="field-ring" cx="315" cy="320" r="115" />
-                <circle class="field-ring" cx="315" cy="320" r="55" />
-                <line class="field-cross" x1="70" y1="320" x2="560" y2="320" />
-                <line class="field-cross" x1="315" y1="75" x2="315" y2="565" />
-                <line class="field-cross" x1="142" y1="147" x2="488" y2="493" />
-                <line class="field-cross" x1="488" y1="147" x2="142" y2="493" />
-                <path class="field-ray" d="M162 355 C235 275 267 270 315 320 C370 375 415 345 476 238" />
-                <circle class="field-pulse" cx="315" cy="320" r="6">
-                  <animateMotion dur="3.8s" repeatCount="indefinite" path="M-153 35 C-80 -45 -48 -50 0 0 C55 55 100 25 161 -82" />
-                </circle>
-              </g>
-              <g class="field-node" role="button" tabindex="0" aria-pressed="true" data-field="eye" transform="translate(132 340)">
-                <circle cx="0" cy="0" r="48" /><text x="0" y="5" text-anchor="middle">안구 상태</text>
-              </g>
-              <g class="field-node" role="button" tabindex="0" aria-pressed="false" data-field="behavior" transform="translate(315 320)">
-                <circle cx="0" cy="0" r="60" /><text x="0" y="5" text-anchor="middle">기능행동</text>
-              </g>
-              <g class="field-node" role="button" tabindex="0" aria-pressed="false" data-field="life" transform="translate(490 220)">
-                <circle cx="0" cy="0" r="48" /><text x="0" y="5" text-anchor="middle">생활 적응</text>
-              </g>
-            </svg>
-            <div class="field-caption" id="fieldCaption" aria-live="polite">안압·염증·각막·망막·임상적 시력반응 등 치료 후 안구 상태의 변화</div>
+          <div class="translation-ladder" aria-label="안구 상태에서 생활 적응으로 이어지는 세 단계">
+            <div class="ladder-node" data-tone="teal">
+              <div class="ladder-node__kicker">CLINICAL</div>
+              <div class="ladder-node__title">안구 상태의 회복</div>
+            </div>
+            <div class="ladder-arrow" aria-hidden="true"></div>
+            <div class="ladder-node" data-tone="burgundy">
+              <div class="ladder-node__kicker">FUNCTION</div>
+              <div class="ladder-node__title">기능적 시각행동</div>
+            </div>
+            <div class="ladder-arrow" aria-hidden="true"></div>
+            <div class="ladder-node">
+              <div class="ladder-node__kicker">LIFE</div>
+              <div class="ladder-node__title">생활 적응과 복지</div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="scene" id="gap" data-nav="측정의 공백">
-        <div class="scene__header">
-          <div>
-            <div class="eyebrow">Why this matters</div>
-            <h2>우리가 잘 측정하는 것과,<br />실제로 알고 싶은 것 사이</h2>
-          </div>
-          <p class="scene__note">기존 안과 endpoint를 대체하지 않습니다. 실제 생활에서 사용할 수 있는 시각이라는 중간층을 추가합니다.</p>
-        </div>
-        <div class="gap-grid">
-          <article class="measure-column">
-            <div class="measure-column__label">Clinical eye endpoints</div>
-            <h3>안구의 상태</h3>
-            <ul class="measure-list">
-              <li><span class="measure-icon">P</span><span>안압, 염증, 각막부종과 수술 후 안정성</span></li>
-              <li><span class="measure-icon">I</span><span>OCT·UBM 등 구조 영상과 임상검사</span></li>
-              <li><span class="measure-icon">E</span><span>ERG와 임상적 시력반응</span></li>
-              <li class="detail-only"><span class="measure-icon">C</span><span>수술 성공률, 합병증과 장기 안과 결과</span></li>
+      <section id="context" data-section="context">
+        <div class="eyebrow">문제의식</div>
+        <h2>우리가 잘 측정하는 것과,<br />아직 덜 측정하는 것</h2>
+        <div class="split-compare reveal">
+          <article class="compare-panel">
+            <div class="compare-panel__label">임상에서 비교적 잘 보는 것</div>
+            <ul>
+              <li>수정체·각막·망막 등 안구 구조 상태</li>
+              <li>수술결과와 기본 안과 임상지표</li>
+              <li>ERG·OCT·시력 관련 기능검사</li>
+              <li>치료 직후의 의학적 안정성</li>
             </ul>
           </article>
-          <div class="gap-bridge" aria-hidden="true">
-            <div>같은 속도?</div><div class="gap-bridge__axis"></div><div>같은 결과?</div>
-          </div>
-          <article class="measure-column measure-column--behavior">
-            <div class="measure-column__label">Functional behavior endpoints</div>
-            <h3>실제 시각의 사용</h3>
-            <ul class="measure-list">
-              <li><span class="measure-icon">N</span><span>장애물 항법, 탐색과 목표 접근</span></li>
-              <li><span class="measure-icon">D</span><span>저대비·움직임·간격 판단</span></li>
-              <li><span class="measure-icon">L</span><span>활동, 수면, 생활 적응과 보호자 체감</span></li>
-              <li class="detail-only"><span class="measure-icon">R</span><span>추가 관리와 행동재활이 필요한 환자 선별</span></li>
+          <div class="compare-equals" aria-label="두 결과가 같은지에 대한 질문">안구 회복<br />=<br />행동 회복?</div>
+          <article class="compare-panel compare-panel--burgundy">
+            <div class="compare-panel__label">기능행동 관점에서 더 알고 싶은 것</div>
+            <ul>
+              <li>실제 이동·탐색·목표 접근의 회복</li>
+              <li>장애물·간격·움직임·저대비 처리</li>
+              <li>통증 없이 다시 시각을 사용하는 과정</li>
+              <li>생활 적응과 보호자 체감 회복</li>
             </ul>
           </article>
         </div>
-        <div class="gap-question"><strong>안구가 회복됐다는 것과 실제로 다시 잘 본다는 것은 같은 결과일까?</strong><span>FOUNDING QUESTION</span></div>
+        <div class="question-strip reveal">핵심 가설: 안구 상태와 기능적 시각행동은 함께 회복할 수도 있고, 환자군과 과제에 따라 시간적으로 어긋날 수도 있다.</div>
       </section>
 
-      <section class="scene" id="cataract" data-nav="백내장 회복 가설">
-        <div class="scene__header">
-          <div>
-            <div class="eyebrow">Foundation A · Cataract</div>
-            <h2>백내장 수술 후 회복은<br />한 가지 곡선이 아닐 수 있다</h2>
+      <section id="program" data-section="program">
+        <div class="eyebrow">프로그램 구조</div>
+        <h2>두 개의 기반 연구에서 시작해<br />하나의 장기 연구경로로 확장됩니다</h2>
+        <p class="lede">왼쪽에서 오른쪽으로 읽으면 현재 착수점, 중기 연구, 재활, 장기 확장의 순서가 보입니다. 각 마일스톤을 누르면 해당 단계의 역할이 아래에 표시됩니다.</p>
+
+        <div class="program-roadmap reveal" aria-label="수의안과 기능행동 연구 프로그램 로드맵">
+          <div class="program-roadmap__start">
+            <div class="roadmap-zone-label">현재 착수 · 두 개의 기반축</div>
+            <div class="foundation-lanes">
+              <button type="button" class="foundation-lane is-active" data-program-roadmap="foundationA" aria-pressed="true">
+                <span class="foundation-lane__tag">기반축 A</span>
+                <strong>백내장 수술 후<br />안구–행동 회복관계</strong>
+                <small>기대 회복곡선 구축</small>
+              </button>
+              <button type="button" class="foundation-lane foundation-lane--pain" data-program-roadmap="foundationB" aria-pressed="false">
+                <span class="foundation-lane__tag">기반축 B</span>
+                <strong>개 안구 특화<br />통증·불편 행동지표</strong>
+                <small>비시각성 교란 프로파일 구축</small>
+              </button>
+            </div>
           </div>
-          <p class="scene__note">아래 곡선은 가설을 설명하기 위한 개념도이며 실제 환자 데이터나 확정된 예측모형이 아닙니다.</p>
-        </div>
-        <div class="hypothesis-layout">
-          <div class="scenario-nav" role="tablist" aria-label="백내장 회복 시나리오">
-            <button class="scenario-button" type="button" role="tab" aria-selected="true" data-scenario="adult">성견의 후천성 백내장</button>
-            <button class="scenario-button" type="button" role="tab" aria-selected="false" data-scenario="deprivation">선천성·유년기·장기 시각박탈</button>
-            <button class="scenario-button" type="button" role="tab" aria-selected="false" data-scenario="task">고난도 시각과제</button>
+
+          <div class="roadmap-merge" aria-hidden="true">
+            <span></span><strong>공통 산출물</strong><span></span>
           </div>
-          <article class="hypothesis-panel" aria-live="polite">
-            <div class="hypothesis-top">
-              <div><div class="hypothesis-top__label">Selected hypothesis</div><div class="hypothesis-title" id="scenarioTitle">빠른 동시 회복 가능성</div></div>
-              <div class="concept-badge">개념도 · 실제 데이터 아님</div>
-            </div>
-            <div class="curve-wrap">
-              <svg class="curve-svg" viewBox="0 0 760 310" role="img" aria-labelledby="curveTitle curveDesc">
-                <title id="curveTitle">안구 상태와 기능행동의 개념적 회복곡선</title>
-                <desc id="curveDesc">선택한 환자군에 따라 안구 상태와 기능적 시각행동의 회복곡선 사이 간격이 변한다.</desc>
-                <g aria-hidden="true">
-                  <line class="gridline" x1="78" y1="60" x2="720" y2="60" />
-                  <line class="gridline" x1="78" y1="120" x2="720" y2="120" />
-                  <line class="gridline" x1="78" y1="180" x2="720" y2="180" />
-                  <line class="gridline" x1="78" y1="240" x2="720" y2="240" />
-                  <line class="axisline" x1="78" y1="36" x2="78" y2="254" />
-                  <line class="axisline" x1="78" y1="254" x2="720" y2="254" />
-                  <text class="curve-label" x="14" y="48">회복</text>
-                  <text class="curve-label" x="660" y="286">수술 후 시간</text>
-                  <text class="curve-label" x="92" y="34">높음</text>
-                  <text class="curve-label" x="92" y="247">낮음</text>
-                </g>
-                <path id="curveArea" class="curve-area" d="M90 235 C170 120 240 70 380 60 C500 52 610 50 700 50 L700 66 C610 65 500 66 380 70 C240 82 170 135 90 235 Z" />
-                <path id="eyeCurve" class="curve-eye" d="M90 235 C170 120 240 70 380 60 C500 52 610 50 700 50" />
-                <path id="behaviorCurve" class="curve-behavior" d="M90 235 C170 135 240 82 380 70 C500 66 610 65 700 66" />
-                <circle id="eyeEnd" class="curve-end-eye" cx="700" cy="50" r="5" />
-                <circle id="behaviorEnd" class="curve-end-behavior" cx="700" cy="66" r="5" />
-                <text class="curve-label" x="572" y="42">안구 임상상태</text>
-                <text id="behaviorLabel" class="curve-label" x="552" y="88">기능적 시각행동</text>
-              </svg>
-            </div>
-            <div class="hypothesis-result">
-              <div class="result-cell"><div class="result-cell__head">가설</div><p id="scenarioHypothesis">안구 임상상태와 기본 기능적 시각행동이 비교적 빠르게 함께 회복할 수 있습니다.</p></div>
-              <div class="result-cell"><div class="result-cell__head">임상적 의미</div><p id="scenarioMeaning">지연이 거의 없다면 일반적인 장기 행동지연을 과도하게 걱정할 필요가 낮다는 근거가 됩니다.</p></div>
-            </div>
+          <button type="button" class="shared-baseline" data-program-roadmap="baseline" aria-pressed="false">
+            <strong>기능행동 평가 + 통증·불편 통제변수</strong>
+            <small>후속 연구에서 같은 언어로 환자를 비교하는 기준선</small>
+          </button>
+
+          <div class="program-road" role="list" aria-label="후속 연구 마일스톤">
+            <button type="button" class="road-milestone" data-program-roadmap="adaptation" aria-pressed="false" role="listitem">
+              <span class="road-milestone__phase">중기 1</span>
+              <strong>자연회복과 적응의 이해</strong>
+              <small>단안 · 양안 · SARDS</small>
+            </button>
+            <button type="button" class="road-milestone" data-program-roadmap="screening" aria-pressed="false" role="listitem">
+              <span class="road-milestone__phase">중기 2</span>
+              <strong>적응지연군 선별</strong>
+              <small>정상범위와 예외군 구분</small>
+            </button>
+            <button type="button" class="road-milestone" data-program-roadmap="rehab" aria-pressed="false" role="listitem">
+              <span class="road-milestone__phase">중재</span>
+              <strong>행동재활과 환경중재</strong>
+              <small>필요한 환자에게만 검증</small>
+            </button>
+            <button type="button" class="road-milestone" data-program-roadmap="expansion" aria-pressed="false" role="listitem">
+              <span class="road-milestone__phase">장기</span>
+              <strong>유전자치료 · 감각대체</strong>
+              <small>회복된 감각의 실제 기능효과</small>
+            </button>
+          </div>
+
+          <button type="button" class="roadmap-return" data-program-roadmap="feedback" aria-pressed="false">
+            <span>↩</span>
+            <strong>후속 자료가 기능과제·통증지표·환자선별 기준을 다시 개선</strong>
+          </button>
+
+          <article class="roadmap-detail" id="programRoadmapDetail" aria-live="polite">
+            <div class="roadmap-detail__tag" id="programRoadmapTag">기반축 A · 현재 착수</div>
+            <h3 id="programRoadmapTitle">백내장 수술 후 안구–행동 회복관계</h3>
+            <p id="programRoadmapBody">안구 임상상태와 기능적 시각행동을 같은 시간축에서 반복 측정해, 환자군과 과제별 기대 회복곡선을 만듭니다.</p>
+            <ul id="programRoadmapList">
+              <li>후천성 성견에서는 두 회복이 빠르게 함께 진행될 가능성</li>
+              <li>선천성·유년기·장기박탈에서는 기능적 사용이 늦을 가능성</li>
+              <li>저대비·움직임·간격판단은 기본 장애물 회피보다 늦을 가능성</li>
+            </ul>
+            <div class="roadmap-detail__outcome" id="programRoadmapOutcome"><strong>다음 단계에 주는 것:</strong> 어떤 회복이 자연스러운 범위이고 어떤 환자가 예외인지 판단할 시간 기준을 제공합니다.</div>
           </article>
         </div>
-        <div class="outcome-strip" aria-label="가능한 연구결과의 임상적 의미">
-          <article class="outcome"><div class="outcome__head">지연이 거의 없음</div><p>후천성 환자에서 장기 행동지연이 일반적이지 않을 수 있다는 임상 근거</p></article>
-          <article class="outcome"><div class="outcome__head">특정 환자군에서 지연</div><p>선천성·장기박탈 환자의 단계적 관리와 행동재활 연구 필요성</p></article>
-          <article class="outcome"><div class="outcome__head">과제별 속도 차이</div><p>시각회복을 단일 시점이 아니라 기능별 회복 프로파일로 정의</p></article>
-        </div>
       </section>
 
-      <section class="scene" id="pain" data-nav="통증 원인 분해">
-        <div class="scene__header">
-          <div>
-            <div class="eyebrow" style="color:var(--red)">Foundation B · Ocular discomfort</div>
-            <h2>느린 행동을 보았을 때,<br />무엇이 원인인지 먼저 분리해야 한다</h2>
-          </div>
-          <p class="scene__note" style="border-color:var(--red)">안구 특화 통증지표는 백내장 연구의 교란통제 도구이면서 독립적으로 임상가치가 높은 연구입니다.</p>
+      <section class="foundation-section" id="cataract" data-section="cataract">
+        <div class="eyebrow">기반 연구 A</div>
+        <h2>백내장 수술 후<br />안구–행동 회복관계</h2>
+        <div class="foundation-intro">
+          <div class="premise">연구는 행동지연이 반드시 존재한다고 가정하지 않습니다.</div>
+          <div class="quick-index"><strong>핵심 질문</strong><span>누구에게, 어떤 기능에서, 얼마나 어긋나는가?</span></div>
         </div>
-        <div class="pain-layout">
-          <div class="pain-map" aria-label="느린 이동과 활동저하의 가능한 원인 네트워크">
-            <svg class="pain-svg" viewBox="0 0 720 560" role="img" aria-labelledby="painTitle painDesc">
-              <title id="painTitle">행동저하 원인 분해</title>
-              <desc id="painDesc">느린 이동과 활동저하를 중심으로 시각 재사용 지연, 통증, 염증, 보호목과 불안, 약물과 기타 통증이 연결된다.</desc>
-              <g aria-hidden="true">
-                <line class="pain-edge is-active" data-edge="vision" x1="360" y1="280" x2="138" y2="132" />
-                <line class="pain-edge" data-edge="pain" x1="360" y1="280" x2="584" y2="130" />
-                <line class="pain-edge" data-edge="inflammation" x1="360" y1="280" x2="620" y2="330" />
-                <line class="pain-edge" data-edge="context" x1="360" y1="280" x2="178" y2="430" />
-                <line class="pain-edge" data-edge="medication" x1="360" y1="280" x2="500" y2="462" />
-              </g>
-              <g class="pain-node pain-center" transform="translate(360 280)"><circle r="78"/><text text-anchor="middle" y="-6">느린 이동</text><text text-anchor="middle" y="18">· 활동저하</text></g>
-              <g class="pain-node" role="button" tabindex="0" aria-pressed="true" data-cause="vision" transform="translate(138 132)"><circle r="62"/><text text-anchor="middle" y="-5">시각 재사용</text><text text-anchor="middle" y="17">지연</text></g>
-              <g class="pain-node" role="button" tabindex="0" aria-pressed="false" data-cause="pain" transform="translate(584 130)"><circle r="55"/><text text-anchor="middle" y="5">안구통증</text></g>
-              <g class="pain-node" role="button" tabindex="0" aria-pressed="false" data-cause="inflammation" transform="translate(620 330)"><circle r="55"/><text text-anchor="middle" y="5">염증·광과민</text></g>
-              <g class="pain-node" role="button" tabindex="0" aria-pressed="false" data-cause="context" transform="translate(178 430)"><circle r="60"/><text text-anchor="middle" y="-5">보호목·불안</text><text text-anchor="middle" y="17">병원환경</text></g>
-              <g class="pain-node" role="button" tabindex="0" aria-pressed="false" data-cause="medication" transform="translate(500 462)"><circle r="62"/><text text-anchor="middle" y="-5">약물·마취</text><text text-anchor="middle" y="17">타부위 통증</text></g>
-            </svg>
+
+        <div class="tabs reveal" data-tabs="cataract">
+          <div class="tablist" role="tablist" aria-label="백내장 연구 가설 선택">
+            <button class="tab-button" id="tab-acquired" role="tab" aria-selected="true" aria-controls="panel-acquired" tabindex="0">후천성 성견</button>
+            <button class="tab-button" id="tab-deprivation" role="tab" aria-selected="false" aria-controls="panel-deprivation" tabindex="-1">발달기·장기박탈</button>
+            <button class="tab-button" id="tab-task" role="tab" aria-selected="false" aria-controls="panel-task" tabindex="-1">고난도 과제</button>
           </div>
-          <aside class="pain-detail" aria-live="polite">
-            <div class="pain-detail__tag">Selected cause</div>
-            <h3 id="causeTitle">시각 재사용 지연</h3>
-            <p id="causeDescription">안구가 안정된 뒤에도 시각정보를 항법과 목표지향 행동에 충분히 사용하지 못하는 상태를 가정합니다.</p>
-            <div class="pain-detail__implication" id="causeImplication"><strong>연구에서의 의미</strong><br />통증과 임상적 방해가 감소한 이후에도 기능 제한이 남는지 확인해야 합니다.</div>
-            <div class="dev-pipeline">
-              <div class="dev-pipeline__title">평가도구 개발 경로</div>
-              <div class="pipeline">
-                <div class="pipeline-step"><span>1</span><div>행동표현 수집과 영상 ethogram</div></div>
-                <div class="pipeline-step"><span>2</span><div>국소 안구·안면 표현과 전신 생활영향 분리</div></div>
-                <div class="pipeline-step"><span>3</span><div>비통증성 실명·백내장·병원불안·타부위 통증과 판별</div></div>
-                <div class="pipeline-step detail-only"><span>4</span><div>동일 환자의 치료 전후 반응성 검증</div></div>
-                <div class="pipeline-step detail-only"><span>5</span><div>수의사 단축형과 보호자 가정형 개발</div></div>
-                <div class="pipeline-step detail-only"><span>6</span><div>후속 연구자료를 이용한 지속적 업데이트</div></div>
+          <div class="tab-panel" id="panel-acquired" role="tabpanel" aria-labelledby="tab-acquired">
+            <div class="hypothesis-layout">
+              <div class="hypothesis-claim">안구 임상상태와 기본적인 기능적 시각행동이 <span class="accent">빠르게 동시 회복</span>할 수 있습니다.</div>
+              <div class="hypothesis-detail"><strong>임상적 의미</strong><p>지연이 거의 없다면 일반적인 장기 행동지연을 과도하게 걱정할 필요가 낮다는 근거가 됩니다. 이는 음성 결과가 아니라 명확한 임상적 결론입니다.</p></div>
+            </div>
+          </div>
+          <div class="tab-panel" id="panel-deprivation" role="tabpanel" aria-labelledby="tab-deprivation" hidden>
+            <div class="hypothesis-layout">
+              <div class="hypothesis-claim">기능적 사용이 더 늦거나 <span class="accent-burgundy">과제별 잔여결손</span>이 남을 수 있습니다.</div>
+              <div class="hypothesis-detail"><strong>임상적 의미</strong><p>선천성·유년기 또는 장기 시각박탈 환자에서 지연이 확인되면 단계적 관리와 행동재활 연구의 필요성을 제시할 수 있습니다.</p></div>
+            </div>
+          </div>
+          <div class="tab-panel" id="panel-task" role="tabpanel" aria-labelledby="tab-task" hidden>
+            <div class="hypothesis-layout">
+              <div>
+                <div class="hypothesis-claim">시각회복은 하나의 시점이 아니라 <span class="accent">기능별 프로파일</span>일 수 있습니다.</div>
+                <div class="task-scale" aria-label="과제 난도별 회복속도 가설">
+                  <div class="task-row"><div class="task-row__label">큰 장애물 회피</div><div class="task-row__bar"><span style="width: 92%"></span></div></div>
+                  <div class="task-row"><div class="task-row__label">저대비·움직임</div><div class="task-row__bar"><span style="width: 62%"></span></div></div>
+                  <div class="task-row"><div class="task-row__label">간격판단</div><div class="task-row__bar"><span style="width: 44%"></span></div></div>
+                </div>
               </div>
+              <div class="hypothesis-detail"><strong>가설</strong><p>큰 장애물 회피보다 저대비·움직임·간격판단의 회복이 늦을 가능성이 있습니다. 막대는 실제 결과가 아니라 가설적 상대 난도를 표현합니다.</p></div>
             </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="scene" id="roadmap" data-nav="연구 프로그램">
-        <div class="scene__header">
-          <div>
-            <div class="eyebrow">Research programme</div>
-            <h2>두 기반 연구에서 시작해<br />적응·재활·확장으로 이어진다</h2>
           </div>
-          <p class="scene__note">노드를 선택하면 각 단계가 앞선 연구에서 무엇을 이어받고, 무엇을 다음 단계에 제공하는지 볼 수 있습니다.</p>
         </div>
-        <div class="roadmap-wrap">
-          <div class="roadmap-stage">
+
+
+
+        <figure class="recovery-graph reveal" aria-labelledby="recoveryGraphTitle">
+          <figcaption class="recovery-graph__head">
             <div>
-              <div class="road-svg-wrap">
-              <svg class="road-svg" viewBox="0 0 820 500" role="img" aria-labelledby="roadTitle roadDesc">
-                <title id="roadTitle">단계적 연구 프로그램</title>
-                <desc id="roadDesc">기반 측정 구축에서 자연 적응, 환자 선별, 행동재활, 유전자치료와 감각대체로 이어지고 평가도구로 다시 돌아오는 연구 경로.</desc>
-                <path class="road-path" d="M95 115 C210 40 340 50 420 130 C505 215 515 320 420 380 C335 435 205 440 115 355 C60 300 68 214 145 185 C225 155 300 205 320 275 C345 365 430 430 535 405 C650 380 716 280 690 180 C670 105 612 72 560 85" />
-                <path id="roadActive" class="road-path-active" d="M95 115 C210 40 340 50 420 130 C505 215 515 320 420 380 C335 435 205 440 115 355 C60 300 68 214 145 185 C225 155 300 205 320 275 C345 365 430 430 535 405 C650 380 716 280 690 180 C670 105 612 72 560 85" />
-                <g class="road-node" role="button" tabindex="0" aria-pressed="true" data-phase="foundation" transform="translate(95 115)"><circle r="52"/><text text-anchor="middle" y="-5">기반 측정</text><text class="node-small" text-anchor="middle" y="17">백내장 + 통증</text></g>
-                <g class="road-node" role="button" tabindex="0" aria-pressed="false" data-phase="adaptation" transform="translate(420 130)"><circle r="52"/><text text-anchor="middle" y="-5">자연 적응</text><text class="node-small" text-anchor="middle" y="17">단안·양안·SARDS</text></g>
-                <g class="road-node" role="button" tabindex="0" aria-pressed="false" data-phase="selection" transform="translate(420 380)"><circle r="52"/><text text-anchor="middle" y="-5">환자 선별</text><text class="node-small" text-anchor="middle" y="17">지연군 기준</text></g>
-                <g class="road-node" role="button" tabindex="0" aria-pressed="false" data-phase="rehab" data-tone="red" transform="translate(115 355)"><circle r="52"/><text text-anchor="middle" y="-5">행동재활</text><text class="node-small" text-anchor="middle" y="17">표적 중재</text></g>
-                <g class="road-node" role="button" tabindex="0" aria-pressed="false" data-phase="extension" transform="translate(535 405)"><circle r="55"/><text text-anchor="middle" y="-6">장기 확장</text><text class="node-small" text-anchor="middle" y="16">유전자치료·감각대체</text></g>
-                <g class="road-node" role="button" tabindex="0" aria-pressed="false" data-phase="feedback" data-tone="red" transform="translate(690 180)"><circle r="50"/><text text-anchor="middle" y="-5">도구 개선</text><text class="node-small" text-anchor="middle" y="17">후속 자료 환류</text></g>
-              </svg>
-              </div>
-              <div class="road-mobile" aria-label="모바일 연구경로 선택">
-                <button class="road-mobile-button" type="button" aria-pressed="true" data-phase="foundation">기반 측정 — 백내장 회복관계와 통증지표</button>
-                <button class="road-mobile-button" type="button" aria-pressed="false" data-phase="adaptation">자연 적응 — 단안·양안 시력상실과 SARDS</button>
-                <button class="road-mobile-button" type="button" aria-pressed="false" data-phase="selection">환자 선별 — 적응지연군 기준</button>
-                <button class="road-mobile-button" type="button" aria-pressed="false" data-phase="rehab">행동재활 — 지연군 표적 중재</button>
-                <button class="road-mobile-button" type="button" aria-pressed="false" data-phase="extension">장기 확장 — 유전자치료와 감각대체</button>
-                <button class="road-mobile-button" type="button" aria-pressed="false" data-phase="feedback">도구 개선 — 후속 자료 환류</button>
-              </div>
+              <div class="recovery-graph__eyebrow">Conceptual recovery profile</div>
+              <div class="recovery-graph__title" id="recoveryGraphTitle">안구 임상상태와 기능적 시각행동의 개념적 회복곡선</div>
             </div>
-            <aside class="road-detail" aria-live="polite">
-              <div class="road-detail__phase" id="roadPhase">Foundation</div>
-              <h3 id="roadHeading">기능행동과 통증의 기준선을 만든다</h3>
-              <p id="roadDescription">백내장 수술 후 안구–행동 회복관계와 안구 특화 통증·불편 지표를 병행해 이후 모든 연구가 공유할 평가기반을 구축합니다.</p>
-              <ul id="roadBullets">
-                <li>후천성 성견 주 코호트의 전향적 종단평가</li>
-                <li>선천성·유년기·장기박탈 증례의 별도 등록</li>
-                <li>안구통증 ethogram과 예비문항 개발</li>
-              </ul>
-              <div class="road-detail__output" id="roadOutput"><strong>다음 단계에 제공:</strong> 반복 가능한 기능행동 과제, 통증 교란 통제, 자연회복의 기준선</div>
+            <div class="recovery-graph__badge">가설 설명용 · 실제 데이터 아님</div>
+          </figcaption>
+          <div class="recovery-graph__body">
+            <div class="recovery-graph__plot">
+              <svg class="recovery-graph__svg" viewBox="0 0 760 310" role="img" aria-labelledby="recoverySvgTitle recoverySvgDesc">
+                <title id="recoverySvgTitle">백내장 수술 후 개념적 회복곡선</title>
+                <desc id="recoverySvgDesc">선택한 환자군 또는 과제에 따라 안구 임상상태와 기능적 시각행동의 회복곡선 사이 간격이 달라지는 개념도입니다.</desc>
+                <g aria-hidden="true">
+                  <line class="recovery-gridline" x1="78" y1="60" x2="720" y2="60" />
+                  <line class="recovery-gridline" x1="78" y1="120" x2="720" y2="120" />
+                  <line class="recovery-gridline" x1="78" y1="180" x2="720" y2="180" />
+                  <line class="recovery-gridline" x1="78" y1="240" x2="720" y2="240" />
+                  <line class="recovery-axis" x1="78" y1="36" x2="78" y2="254" />
+                  <line class="recovery-axis" x1="78" y1="254" x2="720" y2="254" />
+                  <text class="recovery-label" x="14" y="48">회복</text>
+                  <text class="recovery-label" x="660" y="286">수술 후 시간</text>
+                  <text class="recovery-label" x="92" y="34">높음</text>
+                  <text class="recovery-label" x="92" y="247">낮음</text>
+                </g>
+                <path id="recoveryGap" class="recovery-gap" d="M90 235 C170 120 240 70 380 60 C500 52 610 50 700 50 L700 66 C610 65 500 66 380 70 C240 82 170 135 90 235 Z" />
+                <path id="recoveryEyeCurve" class="recovery-eye" d="M90 235 C170 120 240 70 380 60 C500 52 610 50 700 50" />
+                <path id="recoveryBehaviorCurve" class="recovery-behavior" d="M90 235 C170 135 240 82 380 70 C500 66 610 65 700 66" />
+                <circle class="recovery-end-eye" cx="700" cy="50" r="5" />
+                <circle id="recoveryBehaviorEnd" class="recovery-end-behavior" cx="700" cy="66" r="5" />
+                <text class="recovery-label" x="572" y="42">안구 임상상태</text>
+                <text id="recoveryBehaviorLabel" class="recovery-label" x="552" y="88">기능적 시각행동</text>
+              </svg>
+            </div>
+            <aside class="recovery-graph__aside" aria-live="polite">
+              <div class="recovery-legend" aria-label="곡선 범례">
+                <span><i aria-hidden="true"></i>안구 임상상태</span>
+                <span><i aria-hidden="true"></i>기능적 시각행동</span>
+              </div>
+              <p class="recovery-graph__summary" id="recoveryGraphSummary"><strong>빠른 동시 회복 가능성</strong>후천성 성견에서는 두 회복곡선의 간격이 작을 수 있습니다.</p>
+              <p class="recovery-graph__note">위 곡선은 연구가설의 차이를 설명하기 위한 개념도입니다. 시간, 기울기, 간격은 실제 측정값이나 확정된 예측치를 뜻하지 않습니다.</p>
             </aside>
           </div>
-          <div class="feedback-band">유전자치료·재활·감각대체 연구에서 새롭게 발견한 행동표현을 기능과제와 통증지표에 다시 반영합니다.</div>
+        </figure>
+
+        <div class="outcome-grid reveal" aria-label="가능한 결과와 임상적 의미">
+          <article class="outcome"><div class="outcome__condition">후천성 환자에서</div><div class="outcome__arrow">↓</div><h3>지연이 거의 없음</h3><p>일반적인 장기 행동지연을 과도하게 걱정할 필요가 낮다는 근거</p></article>
+          <article class="outcome"><div class="outcome__condition">선천성·장기박탈 환자에서</div><div class="outcome__arrow">↓</div><h3>기능적 지연이 확인됨</h3><p>단계적 관리와 행동재활 연구가 필요한 환자군의 근거</p></article>
+          <article class="outcome"><div class="outcome__condition">과제 사이에서</div><div class="outcome__arrow">↓</div><h3>회복속도 차이가 확인됨</h3><p>시각회복을 단일 시점이 아니라 기능별 회복 프로파일로 정의</p></article>
+        </div>
+
+        <div class="detail-only">
+          <details>
+            <summary>연구설계에서 반드시 분리할 환자군</summary>
+            <p>후천성 성견을 주 코호트로 두고, 선천성·유년기 또는 장기 시각박탈 환자는 별도 등록군으로 추적합니다. 병태와 표본구조가 다르므로 초기 분석에서 단순 합치지 않습니다.</p>
+          </details>
+          <details>
+            <summary>반복 측정의 핵심</summary>
+            <p>안구 임상지표와 기능행동을 같은 시간축에서 반복 측정하여 평균 차이 하나보다 회복곡선과 예외군을 찾습니다.</p>
+          </details>
         </div>
       </section>
 
-      <section class="scene" id="discussion" data-nav="면담 질문">
-        <div class="scene__header">
-          <div>
-            <div class="eyebrow" style="color:var(--red)">Discussion</div>
-            <h2>교수님과 함께<br />현실성을 확인하고 싶은 것</h2>
+      <section class="foundation-section" id="pain" data-section="pain">
+        <div class="eyebrow" style="color: var(--burgundy)">기반 연구 B</div>
+        <h2>개 안구 특화<br />통증·불편 행동지표</h2>
+        <div class="foundation-intro">
+          <div class="premise premise--pain">느린 이동과 활동저하는 시각 재사용 지연만으로 설명되지 않습니다.</div>
+          <div class="quick-index"><strong>핵심 역할</strong><span>교란통제 도구이자 독립적 임상 평가도구</span></div>
+        </div>
+
+        <div class="confound-lab reveal">
+          <div class="cause-map" aria-label="느린 이동과 활동저하의 가능한 원인">
+            <div class="cause-center">느린 이동<br />· 활동저하</div>
+            <button class="cause-button" data-cause="vision" type="button" aria-pressed="true">시각 재사용 지연</button>
+            <button class="cause-button" data-cause="pain" type="button" aria-pressed="false">통증 · 염증</button>
+            <button class="cause-button" data-cause="context" type="button" aria-pressed="false">넥카라 · 불안</button>
+            <button class="cause-button" data-cause="medication" type="button" aria-pressed="false">약물 효과</button>
           </div>
-          <p class="scene__note" style="border-color:var(--red)">처음부터 거대한 프로젝트를 시작하기보다, 가장 타당한 첫 연구의 범위를 정하는 면담을 목표로 합니다.</p>
+          <aside class="cause-detail" aria-live="polite">
+            <div class="cause-detail__tag" id="causeTag">해석 01</div>
+            <h3 id="causeTitle">시각 재사용 지연</h3>
+            <p id="causeBody">안구 임상상태가 안정되었음에도 기능적 항법과 목표탐색의 회복이 늦는지를 확인합니다.</p>
+            <ul id="causeList">
+              <li>안구 지표와 행동지표를 같은 시간축에서 비교</li>
+              <li>기본 과제와 고난도 과제의 회복속도 분리</li>
+              <li>통증이 감소한 이후에도 제한이 남는지 확인</li>
+            </ul>
+          </aside>
         </div>
-        <div class="discussion-grid">
-          <article class="question-row"><div class="question-row__head">환자 모집 가능성</div><p>실제로 추적 가능한 백내장 수술 환자 수와 8–12주 재내원율은 어느 정도인가?</p></article>
-          <article class="question-row"><div class="question-row__head">진료 흐름 적합성</div><p>짧은 행동평가와 영상수집을 외래·재내원 진료에 붙일 수 있는가?</p></article>
-          <article class="question-row"><div class="question-row__head">비교군 설계</div><p>통증성·비통증성 안질환, 통증 없는 실명·백내장 환자를 비교할 수 있는가?</p></article>
-          <article class="question-row"><div class="question-row__head">현실적인 착수 범위</div><p>대학원생이 먼저 시작하기에 가장 타당한 연구범위와 우선순위는 무엇인가?</p></article>
+
+        <div class="development-list reveal" aria-label="통증지표 개발 방향">
+          <article><strong>행동표현</strong>행동표현 수집과 영상 ethogram 구축</article>
+          <article><strong>하위영역</strong>국소 안구·안면 표현과 전신 생활영향 분리</article>
+          <article><strong>판별성</strong>통증 없는 실명·백내장·병원불안·다른 부위 통증과 판별</article>
+          <article><strong>반응성</strong>동일 환자의 치료 전후 변화 검증</article>
+          <article><strong>사용자</strong>수의사 단축형과 보호자 가정형 개발</article>
+          <article><strong>업데이트</strong>후속 연구자료를 이용한 지속적 정교화</article>
         </div>
-        <div class="closing">두 기반 연구로 시작해, 수의안과에서 기능적 시각행동–적응–재활–치료효과 평가를 연결하는 장기 연구 프로그램을 구축하고자 합니다.</div>
+
+        <div class="detail-only">
+          <details>
+            <summary>도구가 측정하려는 것은 무엇인가</summary>
+            <p>단일한 통증 점수만 만드는 것이 아니라, 국소 안구·안면 표현과 전신 생활영향을 분리하고 치료반응성과 판별성을 가진 다차원 도구를 구축합니다.</p>
+          </details>
+          <details>
+            <summary>왜 독립적인 임상가치가 있는가</summary>
+            <p>백내장 연구의 교란통제뿐 아니라 각막질환·녹내장·포도막염 등 다양한 안질환의 치료 전후 통증·불편 변화를 반복적으로 평가할 수 있습니다.</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="bridge" data-section="bridge">
+        <div class="eyebrow">두 기반 연구의 관계</div>
+        <h2>한 환자의 느린 행동을 해석하는<br />임상 로드맵입니다</h2>
+        <p class="lede">처음 보는 사람도 왼쪽에서 오른쪽으로 읽으면 됩니다. 관찰된 행동을 두 기준선과 비교한 뒤 원인을 분류하고 다음 조치를 결정합니다.</p>
+
+        <div class="interpretation-roadmap reveal" aria-label="느린 행동의 원인 분해와 임상 해석 로드맵">
+          <div class="interpretation-road" role="list">
+            <button type="button" class="interpretation-stop is-active" data-interpretation="observe" aria-pressed="true" role="listitem">
+              <span class="interpretation-stop__number">1</span>
+              <span class="interpretation-stop__label">관찰</span>
+              <strong>느린 이동 · 활동저하</strong>
+              <small>현상만으로 원인을 단정하지 않음</small>
+            </button>
+
+            <div class="interpretation-arrow" aria-hidden="true">→</div>
+
+            <button type="button" class="interpretation-stop interpretation-stop--wide" data-interpretation="compare" aria-pressed="false" role="listitem">
+              <span class="interpretation-stop__number">2</span>
+              <span class="interpretation-stop__label">두 기준선과 비교</span>
+              <div class="reference-lanes">
+                <span><b>A</b> 환자군·과제별 기대 회복곡선</span>
+                <span class="reference-lanes__pain"><b>B</b> 통증·불편·상황요인의 행동 프로파일</span>
+              </div>
+            </button>
+
+            <div class="interpretation-arrow" aria-hidden="true">→</div>
+
+            <button type="button" class="interpretation-stop interpretation-stop--wide" data-interpretation="classify" aria-pressed="false" role="listitem">
+              <span class="interpretation-stop__number">3</span>
+              <span class="interpretation-stop__label">원인 분류</span>
+              <div class="cause-signs">
+                <span>자연회복 범위</span>
+                <span>시각 재사용 지연</span>
+                <span>통증 · 염증</span>
+                <span>넥카라 · 불안 · 약물</span>
+                <span>혼합 원인</span>
+              </div>
+            </button>
+
+            <div class="interpretation-arrow" aria-hidden="true">→</div>
+
+            <button type="button" class="interpretation-stop" data-interpretation="act" aria-pressed="false" role="listitem">
+              <span class="interpretation-stop__number">4</span>
+              <span class="interpretation-stop__label">다음 조치</span>
+              <strong>관찰 · 치료 · 재활</strong>
+              <small>원인에 맞는 관리 선택</small>
+            </button>
+          </div>
+
+          <article class="roadmap-detail roadmap-detail--bridge" id="interpretationDetail" aria-live="polite">
+            <div class="roadmap-detail__tag" id="interpretationTag">1 · 관찰</div>
+            <h3 id="interpretationTitle">느린 행동은 출발점이지 진단이 아닙니다</h3>
+            <p id="interpretationBody">수술 후 천천히 걷거나 활동이 줄었다는 사실만으로 기능적 시각회복이 늦다고 결론 내릴 수 없습니다.</p>
+            <ul id="interpretationList">
+              <li>시각 재사용 지연, 통증·염증, 넥카라·불안, 약물 등이 같은 행동으로 나타날 수 있습니다.</li>
+              <li>따라서 행동을 기록한 뒤 서로 다른 원인 기준선과 비교해야 합니다.</li>
+            </ul>
+            <div class="roadmap-detail__outcome" id="interpretationOutcome"><strong>왜 두 연구가 필요한가:</strong> 기반축 A는 ‘기대되는 시각 회복’을, 기반축 B는 ‘시각 외 원인이 만드는 행동’을 제공합니다.</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="roadmap" data-section="roadmap">
+        <div class="eyebrow">단계별 확장</div>
+        <h2>연구가 다음 단계로 넘어가는<br />조건을 보여주는 마일스톤 로드맵</h2>
+        <p class="lede">위에서 아래로 진행합니다. 각 단계 사이의 ‘통과 조건’을 충족해야 다음 연구가 설득력을 갖습니다. 단계를 누르면 세부 내용이 펼쳐집니다.</p>
+
+        <div class="milestone-roadmap reveal" aria-label="단계별 연구 확장 마일스톤">
+          <div class="milestone-roadmap__spine" aria-hidden="true"></div>
+
+          <article class="milestone-item is-active" data-milestone-item="1">
+            <button type="button" class="milestone-trigger" data-milestone="1" aria-expanded="true" aria-controls="milestone-panel-1">
+              <span class="milestone-marker"><b>1</b></span>
+              <span class="milestone-heading">
+                <small>현재 착수</small>
+                <strong>기반 측정 구축</strong>
+                <em>백내장 회복곡선과 안구 통증·불편 통제변수</em>
+              </span>
+              <span class="milestone-toggle">세부 보기</span>
+            </button>
+            <div class="milestone-panel" id="milestone-panel-1">
+              <ul><li>후천성 백내장 주 코호트 전향적 종단평가</li><li>선천성·유년기·장기박탈 증례 별도 등록</li><li>안구통증 ethogram과 예비문항 개발</li></ul>
+            </div>
+          </article>
+
+          <div class="milestone-gate"><span>통과 조건 1</span><strong>반복 가능한 기능행동 측정 + 통증·불편 통제변수 확보</strong></div>
+
+          <article class="milestone-item" data-milestone-item="2">
+            <button type="button" class="milestone-trigger" data-milestone="2" aria-expanded="false" aria-controls="milestone-panel-2">
+              <span class="milestone-marker"><b>2</b></span>
+              <span class="milestone-heading"><small>중기 코호트</small><strong>자연회복과 적응의 이해</strong><em>단안 · 양안 · SARDS의 실제 적응 궤적</em></span>
+              <span class="milestone-toggle">세부 보기</span>
+            </button>
+            <div class="milestone-panel" id="milestone-panel-2" hidden>
+              <ul><li>단안 시력상실 후 머리 스캐닝과 경로 비대칭</li><li>양안 실명의 생활기능·활동·탐색 변화</li><li>SARDS의 후각·청각·비시각 인지 표현형</li></ul>
+            </div>
+          </article>
+
+          <div class="milestone-gate"><span>통과 조건 2</span><strong>자연 적응의 정상범위 + 적응지연군 기준 + 성공적 보상전략 확보</strong></div>
+
+          <article class="milestone-item" data-milestone-item="3">
+            <button type="button" class="milestone-trigger" data-milestone="3" aria-expanded="false" aria-controls="milestone-panel-3">
+              <span class="milestone-marker"><b>3</b></span>
+              <span class="milestone-heading"><small>환자 선별</small><strong>재활 필요군 정의</strong><em>기대 회복범위와 교란 프로파일을 실제 환자에 적용</em></span>
+              <span class="milestone-toggle">세부 보기</span>
+            </button>
+            <div class="milestone-panel" id="milestone-panel-3" hidden>
+              <ul><li>자연회복 범위 안의 환자와 예외군 구분</li><li>시각 재사용 지연과 통증·불편·환경요인 분리</li><li>경과관찰군과 표적 중재군의 기준 정의</li></ul>
+            </div>
+          </article>
+
+          <div class="milestone-gate"><span>통과 조건 3</span><strong>재활 대상·시작 시점·평가 지표를 사전에 정의</strong></div>
+
+          <article class="milestone-item" data-milestone-item="4">
+            <button type="button" class="milestone-trigger" data-milestone="4" aria-expanded="false" aria-controls="milestone-panel-4">
+              <span class="milestone-marker"><b>4</b></span>
+              <span class="milestone-heading"><small>표적 중재</small><strong>행동재활과 환경중재 검증</strong><em>자연회복 이후에도 제한이 남는 환자에게만 적용</em></span>
+              <span class="milestone-toggle">세부 보기</span>
+            </button>
+            <div class="milestone-panel" id="milestone-panel-4" hidden>
+              <ul><li>능동적 머리 스캐닝과 단안 깊이단서 활용</li><li>새로운 환경의 단계적 노출</li><li>장애물·간격·움직이는 표적 훈련과 보호자 지침</li></ul>
+            </div>
+          </article>
+
+          <div class="milestone-gate"><span>통과 조건 4</span><strong>중재가 실제 기능행동과 생활 적응을 개선한다는 근거 확보</strong></div>
+
+          <article class="milestone-item" data-milestone-item="5">
+            <button type="button" class="milestone-trigger" data-milestone="5" aria-expanded="false" aria-controls="milestone-panel-5">
+              <span class="milestone-marker"><b>5</b></span>
+              <span class="milestone-heading"><small>장기 공동연구</small><strong>유전자치료와 감각대체로 확장</strong><em>회복되거나 대체된 감각입력의 실제 기능효과 평가</em></span>
+              <span class="milestone-toggle">세부 보기</span>
+            </button>
+            <div class="milestone-panel" id="milestone-panel-5" hidden>
+              <ul><li>ERG·OCT 개선과 행동회복의 시간축 비교</li><li>발달기·장기 실명에서 치료 후 재활 필요성 검증</li><li>완전실명견의 시각–촉각 공간매핑과 일반화</li></ul>
+            </div>
+          </article>
+
+          <div class="milestone-return"><span>선순환</span><strong>후속 연구자료가 기능과제·통증지표·환자선별 기준을 다시 정교화</strong></div>
+        </div>
+      </section>
+
+      <section id="discussion" data-section="discussion">
+        <div class="eyebrow" style="color: var(--burgundy)">면담의 초점</div>
+        <h2>이 연구를 실제 임상연구로<br />시작하려면 무엇부터 확인해야 할까?</h2>
+        <div class="discussion-grid reveal">
+          <article class="question-item"><div class="question-item__label">환자 모집 가능성</div><p>실제로 추적 가능한 백내장 수술 환자 수와 재내원율은 어느 정도인가?</p></article>
+          <article class="question-item"><div class="question-item__label">진료 흐름 적합성</div><p>짧은 행동평가와 영상수집을 외래·재내원 진료 흐름에 붙일 수 있는가?</p></article>
+          <article class="question-item"><div class="question-item__label">비교군 설계</div><p>통증성·비통증성 안질환 또는 통증 없는 실명군을 함께 비교할 수 있는가?</p></article>
+          <article class="question-item"><div class="question-item__label">현실적인 첫 범위</div><p>대학원생이 가장 먼저 시작하기에 타당한 범위와 우선순위는 무엇인가?</p></article>
+        </div>
+        <div class="closing-note reveal">두 기반 연구로 시작해, 수의안과에서 기능적 시각행동–적응–재활–치료효과 평가를 연결하는 장기 연구 프로그램을 구축하고자 합니다.</div>
       </section>
     </main>
   </div>
@@ -649,204 +1163,285 @@
   <script>
     (() => {
       const root = document.documentElement;
-      const sections = [...document.querySelectorAll('.scene')];
-      const navLinks = [...document.querySelectorAll('.rail a')];
-      const progress = document.getElementById('progressBar');
+      const themeButton = document.getElementById('themeButton');
+      const densityButton = document.getElementById('densityButton');
+      const shareButton = document.getElementById('shareButton');
       const toast = document.getElementById('toast');
-      let toastTimer;
+      const navLinks = [...document.querySelectorAll('.sidenav a')];
+      const sections = [...document.querySelectorAll('main section[data-section]')];
+      const progressBar = document.getElementById('progressBar');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      const notify = (message) => {
+      const showToast = (message) => {
         toast.textContent = message;
-        toast.classList.add('is-visible');
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 1800);
+        toast.dataset.show = 'true';
+        window.clearTimeout(showToast.timer);
+        showToast.timer = window.setTimeout(() => { toast.dataset.show = 'false'; }, 2200);
       };
+
+      const storageGet = (key) => { try { return localStorage.getItem(key); } catch { return null; } };
+      const storageSet = (key, value) => { try { localStorage.setItem(key, value); } catch {} };
+      const storedTheme = storageGet('research-roadmap-theme');
+      if (storedTheme === 'dark' || storedTheme === 'light') root.dataset.theme = storedTheme;
+      const updateThemeLabel = () => {
+        const isDark = root.dataset.theme === 'dark';
+        themeButton.setAttribute('aria-label', isDark ? '밝은 테마로 전환' : '어두운 테마로 전환');
+        themeButton.title = isDark ? '밝은 테마로 전환' : '어두운 테마로 전환';
+      };
+      updateThemeLabel();
+      themeButton.addEventListener('click', () => {
+        root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        storageSet('research-roadmap-theme', root.dataset.theme);
+        updateThemeLabel();
+      });
+
+      densityButton.addEventListener('click', () => {
+        const expanded = root.dataset.density !== 'expanded';
+        root.dataset.density = expanded ? 'expanded' : 'concise';
+        densityButton.setAttribute('aria-pressed', String(expanded));
+        densityButton.textContent = expanded ? '핵심만 보기' : '상세 내용 보기';
+      });
+
+      shareButton.addEventListener('click', async () => {
+        const url = window.location.href;
+        try {
+          await navigator.clipboard.writeText(url);
+          showToast('현재 위치 링크를 복사했습니다.');
+        } catch {
+          const input = document.createElement('textarea');
+          input.value = url; document.body.appendChild(input); input.select();
+          document.execCommand('copy'); input.remove();
+          showToast('현재 위치 링크를 복사했습니다.');
+        }
+      });
 
       const updateProgress = () => {
-        const max = document.documentElement.scrollHeight - innerHeight;
-        const ratio = max > 0 ? Math.min(1, scrollY / max) : 0;
-        progress.style.width = `${ratio * 100}%`;
+        const scrollTop = window.scrollY;
+        const height = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = `${height > 0 ? Math.min(100, (scrollTop / height) * 100) : 0}%`;
       };
-      addEventListener('scroll', updateProgress, { passive: true });
+      window.addEventListener('scroll', updateProgress, { passive: true });
       updateProgress();
 
-      const observer = new IntersectionObserver(entries => {
-        const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      const sectionObserver = new IntersectionObserver((entries) => {
+        const visible = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (!visible) return;
-        navLinks.forEach(link => link.setAttribute('aria-current', link.getAttribute('href') === `#${visible.target.id}` ? 'true' : 'false'));
-      }, { rootMargin: '-30% 0px -55% 0px', threshold: [0.05, .25, .5] });
-      sections.forEach(section => observer.observe(section));
+        const id = visible.target.id;
+        navLinks.forEach(link => link.setAttribute('aria-current', String(link.getAttribute('href') === `#${id}`)));
+        if (history.replaceState && window.location.hash !== `#${id}`) history.replaceState(null, '', `#${id}`);
+      }, { rootMargin: '-22% 0px -58% 0px', threshold: [0.08, 0.3, 0.6] });
+      sections.forEach(section => sectionObserver.observe(section));
 
-      const detailToggle = document.getElementById('detailToggle');
-      detailToggle.addEventListener('click', () => {
-        const full = root.dataset.detail !== 'full';
-        root.dataset.detail = full ? 'full' : 'concise';
-        detailToggle.setAttribute('aria-pressed', String(full));
-        detailToggle.firstChild.nodeValue = full ? '간결 ' : '상세 ';
-        notify(full ? '상세 설명을 표시합니다.' : '핵심 내용만 표시합니다.');
-      });
+      const revealItems = [...document.querySelectorAll('.reveal')];
+      if (reduceMotion) revealItems.forEach(el => el.classList.add('is-visible'));
+      else {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+          });
+        }, { threshold: .12 });
+        revealItems.forEach(el => revealObserver.observe(el));
+      }
 
-      const themeToggle = document.getElementById('themeToggle');
-      themeToggle.addEventListener('click', () => {
-        const dark = root.dataset.theme !== 'dark';
-        root.dataset.theme = dark ? 'dark' : 'light';
-        themeToggle.setAttribute('aria-label', dark ? '밝은 테마로 전환' : '어두운 테마로 전환');
-      });
-
-      const presentToggle = document.getElementById('presentToggle');
-      presentToggle.addEventListener('click', () => {
-        const present = root.dataset.mode !== 'present';
-        root.dataset.mode = present ? 'present' : 'scroll';
-        presentToggle.setAttribute('aria-pressed', String(present));
-        presentToggle.firstChild.nodeValue = present ? '스크롤 ' : '발표 ';
-        notify(present ? '발표 모드: 방향키로 섹션을 이동할 수 있습니다.' : '스크롤 모드로 돌아왔습니다.');
-      });
-
-      const copyLink = document.getElementById('copyLink');
-      copyLink.addEventListener('click', async () => {
-        const current = navLinks.find(link => link.getAttribute('aria-current') === 'true');
-        const url = new URL(location.href);
-        if (current) url.hash = current.getAttribute('href');
-        try {
-          await navigator.clipboard.writeText(url.href);
-          notify('현재 섹션 링크를 복사했습니다.');
-        } catch {
-          window.prompt('아래 링크를 복사하세요.', url.href);
-        }
-      });
-
-      addEventListener('keydown', (event) => {
-        if (root.dataset.mode !== 'present') return;
-        if (!['ArrowDown','ArrowRight','PageDown','ArrowUp','ArrowLeft','PageUp'].includes(event.key)) return;
-        const currentIndex = sections.findIndex(section => {
-          const rect = section.getBoundingClientRect();
-          return rect.top <= innerHeight * .45 && rect.bottom >= innerHeight * .45;
-        });
-        if (currentIndex < 0) return;
-        const forward = ['ArrowDown','ArrowRight','PageDown'].includes(event.key);
-        const target = sections[Math.max(0, Math.min(sections.length - 1, currentIndex + (forward ? 1 : -1)))];
-        if (target && target !== sections[currentIndex]) {
-          event.preventDefault();
-          target.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-        }
-      });
-
-      // Hero field nodes
-      const fieldCopy = {
-        eye: '안압·염증·각막·망막·임상적 시력반응 등 치료 후 안구 상태의 변화',
-        behavior: '장애물 항법, 목표 접근, 저대비·움직임·간격 판단처럼 실제로 사용하는 시각',
-        life: '가정과 새로운 환경에서의 활동, 적응, 독립성과 보호자가 체감하는 생활회복'
-      };
-      document.querySelectorAll('.field-node').forEach(node => {
-        const activate = () => {
-          document.querySelectorAll('.field-node').forEach(n => n.setAttribute('aria-pressed','false'));
-          node.setAttribute('aria-pressed','true');
-          document.getElementById('fieldCaption').textContent = fieldCopy[node.dataset.field];
+      const tabContainers = [...document.querySelectorAll('[data-tabs]')];
+      tabContainers.forEach(container => {
+        const tabs = [...container.querySelectorAll('[role="tab"]')];
+        const panels = [...container.querySelectorAll('[role="tabpanel"]')];
+        const activate = (tab, focus = true) => {
+          tabs.forEach(t => { t.setAttribute('aria-selected', String(t === tab)); t.tabIndex = t === tab ? 0 : -1; });
+          panels.forEach(p => { p.hidden = p.id !== tab.getAttribute('aria-controls'); });
+          if (focus) tab.focus();
         };
-        node.addEventListener('click', activate);
-        node.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+        tabs.forEach((tab, index) => {
+          tab.addEventListener('click', () => activate(tab, false));
+          tab.addEventListener('keydown', (event) => {
+            let next = null;
+            if (event.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length];
+            if (event.key === 'ArrowLeft') next = tabs[(index - 1 + tabs.length) % tabs.length];
+            if (event.key === 'Home') next = tabs[0];
+            if (event.key === 'End') next = tabs[tabs.length - 1];
+            if (next) { event.preventDefault(); activate(next); }
+          });
+        });
       });
 
-      // Cataract scenario explorer
-      const scenarios = {
-        adult: {
-          title: '빠른 동시 회복 가능성',
+
+
+      // Keep the recovery graph synchronized with the existing cataract hypothesis tabs.
+      const recoveryProfiles = {
+        'tab-acquired': {
           eye: 'M90 235 C170 120 240 70 380 60 C500 52 610 50 700 50',
           behavior: 'M90 235 C170 135 240 82 380 70 C500 66 610 65 700 66',
-          area: 'M90 235 C170 120 240 70 380 60 C500 52 610 50 700 50 L700 66 C610 65 500 66 380 70 C240 82 170 135 90 235 Z',
-          endY: 66, labelY: 88,
-          hypothesis: '안구 임상상태와 기본 기능적 시각행동이 비교적 빠르게 함께 회복할 수 있습니다.',
-          meaning: '지연이 거의 없다면 일반적인 장기 행동지연을 과도하게 걱정할 필요가 낮다는 근거가 됩니다.'
+          gap: 'M90 235 C170 120 240 70 380 60 C500 52 610 50 700 50 L700 66 C610 65 500 66 380 70 C240 82 170 135 90 235 Z',
+          endY: 66,
+          labelY: 88,
+          title: '빠른 동시 회복 가능성',
+          summary: '후천성 성견에서는 두 회복곡선의 간격이 작을 수 있습니다.'
         },
-        deprivation: {
-          title: '기능적 사용의 지연 가능성',
+        'tab-deprivation': {
           eye: 'M90 235 C165 115 240 68 380 58 C500 52 610 50 700 50',
           behavior: 'M90 240 C225 235 285 205 365 150 C470 82 590 76 700 72',
-          area: 'M90 235 C165 115 240 68 380 58 C500 52 610 50 700 50 L700 72 C590 76 470 82 365 150 C285 205 225 235 90 240 Z',
-          endY: 72, labelY: 102,
-          hypothesis: '선천성·유년기 또는 장기 시각박탈 환자는 기본 탐지 이후에도 기능적 사용과 일반화가 더 늦을 수 있습니다.',
-          meaning: '지연이 확인되면 단계적 시각경험과 행동재활을 검증할 근거가 됩니다.'
+          gap: 'M90 235 C165 115 240 68 380 58 C500 52 610 50 700 50 L700 72 C590 76 470 82 365 150 C285 205 225 235 90 240 Z',
+          endY: 72,
+          labelY: 102,
+          title: '기능적 사용의 지연 가능성',
+          summary: '선천성·유년기 또는 장기 시각박탈 환자에서는 안구 회복 뒤에도 기능적 사용이 늦을 수 있습니다.'
         },
-        task: {
-          title: '과제 난도에 따른 선택적 지연',
+        'tab-task': {
           eye: 'M90 235 C170 120 240 70 380 60 C500 52 610 50 700 50',
           behavior: 'M90 235 C175 130 250 92 360 88 C470 85 560 78 700 76',
-          area: 'M90 235 C170 120 240 70 380 60 C500 52 610 50 700 50 L700 76 C560 78 470 85 360 88 C250 92 175 130 90 235 Z',
-          endY: 76, labelY: 105,
-          hypothesis: '큰 고대비 장애물 회피는 빨리 회복하지만 저대비·움직임·간격판단은 더 늦을 수 있습니다.',
-          meaning: '시각회복을 한 시점의 성공·실패가 아니라 기능영역별 회복 프로파일로 정의할 수 있습니다.'
+          gap: 'M90 235 C170 120 240 70 380 60 C500 52 610 50 700 50 L700 76 C560 78 470 85 360 88 C250 92 175 130 90 235 Z',
+          endY: 76,
+          labelY: 105,
+          title: '과제 난도에 따른 선택적 지연',
+          summary: '큰 장애물 회피보다 저대비·움직임·간격판단에서 기능적 회복이 더 늦을 수 있습니다.'
         }
       };
-      const eyeCurve = document.getElementById('eyeCurve');
-      const behaviorCurve = document.getElementById('behaviorCurve');
-      const curveArea = document.getElementById('curveArea');
-      const behaviorEnd = document.getElementById('behaviorEnd');
-      const behaviorLabel = document.getElementById('behaviorLabel');
-      document.querySelectorAll('.scenario-button').forEach(button => {
-        button.addEventListener('click', () => {
-          document.querySelectorAll('.scenario-button').forEach(b => b.setAttribute('aria-selected','false'));
-          button.setAttribute('aria-selected','true');
-          const s = scenarios[button.dataset.scenario];
-          document.getElementById('scenarioTitle').textContent = s.title;
-          document.getElementById('scenarioHypothesis').textContent = s.hypothesis;
-          document.getElementById('scenarioMeaning').textContent = s.meaning;
-          eyeCurve.setAttribute('d', s.eye);
-          behaviorCurve.setAttribute('d', s.behavior);
-          curveArea.setAttribute('d', s.area);
-          behaviorEnd.setAttribute('cy', s.endY);
-          behaviorLabel.setAttribute('y', s.labelY);
+      const recoveryEyeCurve = document.getElementById('recoveryEyeCurve');
+      const recoveryBehaviorCurve = document.getElementById('recoveryBehaviorCurve');
+      const recoveryGap = document.getElementById('recoveryGap');
+      const recoveryBehaviorEnd = document.getElementById('recoveryBehaviorEnd');
+      const recoveryBehaviorLabel = document.getElementById('recoveryBehaviorLabel');
+      const recoveryGraphSummary = document.getElementById('recoveryGraphSummary');
+      const updateRecoveryGraph = (tab) => {
+        const profile = recoveryProfiles[tab.id];
+        if (!profile || !recoveryEyeCurve) return;
+        recoveryEyeCurve.setAttribute('d', profile.eye);
+        recoveryBehaviorCurve.setAttribute('d', profile.behavior);
+        recoveryGap.setAttribute('d', profile.gap);
+        recoveryBehaviorEnd.setAttribute('cy', profile.endY);
+        recoveryBehaviorLabel.setAttribute('y', profile.labelY);
+        recoveryGraphSummary.innerHTML = `<strong>${profile.title}</strong>${profile.summary}`;
+      };
+      document.querySelectorAll('[data-tabs="cataract"] [role="tab"]').forEach(tab => {
+        tab.addEventListener('click', () => updateRecoveryGraph(tab));
+        tab.addEventListener('keydown', () => {
+          window.requestAnimationFrame(() => {
+            const active = document.querySelector('[data-tabs="cataract"] [role="tab"][aria-selected="true"]');
+            if (active) updateRecoveryGraph(active);
+          });
         });
       });
 
-      // Pain cause explorer
-      const causes = {
-        vision: { title:'시각 재사용 지연', description:'안구가 안정된 뒤에도 시각정보를 항법과 목표지향 행동에 충분히 사용하지 못하는 상태를 가정합니다.', implication:'통증과 임상적 방해가 감소한 이후에도 기능 제한이 남는지 확인해야 합니다.' },
-        pain: { title:'안구통증', description:'눈감기, 비비기, 안면접촉 회피와 전신 활동저하가 느린 이동으로 나타날 수 있습니다.', implication:'시각행동 평가와 별도로 국소 안구·안면 표현을 측정해야 합니다.' },
-        inflammation: { title:'염증·광과민', description:'전방염증, 각막부종과 광과민은 시각입력이 존재해도 과제를 회피하게 만들 수 있습니다.', implication:'안과 임상지표와 행동점수의 시간적 동행을 분석해야 합니다.' },
-        context: { title:'보호목·불안·병원환경', description:'보호목과 활동제한, 새로운 검사환경과 보호자의 개입은 이동속도와 탐색을 변화시킵니다.', implication:'가정영상과 친숙한 환경 대조, 표준화된 검사조건이 필요합니다.' },
-        medication: { title:'약물·마취·타부위 통증', description:'진정, 마취 후 회복, 약물효과와 정형외과·신경학적 문제도 활동저하를 만들 수 있습니다.', implication:'투약·마취·동반질환 기록과 제외·보정 기준이 필요합니다.' }
+
+
+      const programRoadmapData = {
+        foundationA: { tag: '기반축 A · 현재 착수', title: '백내장 수술 후 안구–행동 회복관계', body: '안구 임상상태와 기능적 시각행동을 같은 시간축에서 반복 측정해, 환자군과 과제별 기대 회복곡선을 만듭니다.', list: ['후천성 성견에서는 두 회복이 빠르게 함께 진행될 가능성', '선천성·유년기·장기박탈에서는 기능적 사용이 늦을 가능성', '저대비·움직임·간격판단은 기본 장애물 회피보다 늦을 가능성'], outcome: '어떤 회복이 자연스러운 범위이고 어떤 환자가 예외인지 판단할 시간 기준을 제공합니다.', tone: 'teal' },
+        foundationB: { tag: '기반축 B · 현재 착수', title: '개 안구 특화 통증·불편 행동지표', body: '같은 느린 행동이 통증·염증·넥카라·불안·약물 때문에 나타날 수 있으므로, 시각 외 원인이 만드는 행동 프로파일을 구축합니다.', list: ['국소 안구·안면 표현과 전신 생활영향 분리', '통증 없는 실명·백내장·병원불안·타부위 통증과 판별', '동일 환자의 치료 전후 반응성과 후속 연구 공통 변수화'], outcome: '행동 저하가 시각문제인지 통증·불편·상황요인인지 구분하는 기준을 제공합니다.', tone: 'burgundy' },
+        baseline: { tag: '공통 산출물', title: '후속 연구가 공유하는 측정과 해석의 기준선', body: '두 기반 연구의 산출물을 함께 사용하면 서로 다른 질환과 환자군을 같은 틀로 비교할 수 있습니다.', list: ['기능적 시각행동을 반복 측정하는 공통 과제', '통증·불편·불안·약물 등 교란변수 기록', '자연회복 범위와 예외군을 구분하는 시간 기준'], outcome: '후속 적응·재활·치료효과 연구가 서로 연결된 프로그램이 됩니다.', tone: 'teal' },
+        adaptation: { tag: '중기 1', title: '자연회복과 적응의 이해', body: '단안·양안 시력상실과 SARDS에서 동물이 실제로 어떻게 보상하고 적응하는지 장기 추적합니다.', list: ['단안 시력상실의 머리 스캐닝과 경로 비대칭', '양안 실명의 생활기능·활동·탐색 궤적', 'SARDS의 비시각 감각·인지 표현형'], outcome: '자연스럽게 잘 적응하는 환자와 장기 제한이 남는 환자를 구분할 근거를 만듭니다.', tone: 'teal' },
+        screening: { tag: '중기 2', title: '적응지연군의 선별', body: '기반 연구에서 만든 회복범위와 교란 프로파일을 실제 환자에게 적용해 추가 관리가 필요한 군을 골라냅니다.', list: ['자연회복 범위 안의 변화인지 확인', '시각 재사용 지연과 통증·불편·환경요인 분리', '경과관찰군과 표적 중재군의 기준 정의'], outcome: '재활의 필요성을 처음부터 가정하지 않고 필요한 환자에게만 적용할 수 있습니다.', tone: 'burgundy' },
+        rehab: { tag: '중재', title: '행동재활과 환경중재', body: '자연회복 이후에도 기능제한이 남는 환자에게 표적 중재를 적용하고 실제 생활기능 개선을 재측정합니다.', list: ['능동적 머리 스캐닝과 깊이단서 활용', '새로운 환경의 단계적 노출', '장애물·간격·움직이는 표적 훈련과 보호자 지침'], outcome: '재활의 대상·시기·효과를 데이터 기반으로 정의합니다.', tone: 'teal' },
+        expansion: { tag: '장기', title: '유전자치료와 감각대체로 확장', body: '회복되거나 대체된 감각입력이 실제 행동과 생활 적응으로 번역되는지를 평가합니다.', list: ['ERG·OCT 개선과 행동회복의 시간축 비교', '발달기·장기 실명에서 치료 후 재활 필요성 검증', '완전실명견의 시각–촉각 공간매핑과 일반화'], outcome: '치료효과를 안구 지표에서 실제 삶의 기능회복까지 확장해 해석합니다.', tone: 'teal' },
+        feedback: { tag: '선순환', title: '후속 자료가 다시 평가도구를 개선합니다', body: '각 단계에서 새로 발견한 행동표현과 예후요인은 처음 만든 기능과제와 통증지표를 다시 정교화합니다.', list: ['질환별 기능과제의 난도와 민감도 조정', '통증·불편 문항의 판별성과 반응성 개선', '환자선별과 예후예측 기준 업데이트'], outcome: '단발성 연구 목록이 아니라 계속 정교해지는 연구 플랫폼이 됩니다.', tone: 'teal' }
       };
-      document.querySelectorAll('.pain-node[data-cause]').forEach(node => {
-        const activate = () => {
-          const key = node.dataset.cause;
-          document.querySelectorAll('.pain-node[data-cause]').forEach(n => n.setAttribute('aria-pressed','false'));
-          document.querySelectorAll('.pain-edge').forEach(e => e.classList.toggle('is-active', e.dataset.edge === key));
-          node.setAttribute('aria-pressed','true');
-          const c = causes[key];
-          document.getElementById('causeTitle').textContent = c.title;
-          document.getElementById('causeDescription').textContent = c.description;
-          document.getElementById('causeImplication').innerHTML = `<strong>연구에서의 의미</strong><br>${c.implication}`;
-        };
-        node.addEventListener('click', activate);
-        node.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+      const programRoadmapButtons = [...document.querySelectorAll('[data-program-roadmap]')];
+      const programRoadmapDetail = document.getElementById('programRoadmapDetail');
+      const updateProgramRoadmap = (button) => {
+        const data = programRoadmapData[button.dataset.programRoadmap];
+        if (!data) return;
+        programRoadmapButtons.forEach(item => { item.classList.toggle('is-active', item === button); item.setAttribute('aria-pressed', String(item === button)); });
+        document.getElementById('programRoadmapTag').textContent = data.tag;
+        document.getElementById('programRoadmapTitle').textContent = data.title;
+        document.getElementById('programRoadmapBody').textContent = data.body;
+        document.getElementById('programRoadmapList').innerHTML = data.list.map(item => `<li>${item}</li>`).join('');
+        document.getElementById('programRoadmapOutcome').innerHTML = `<strong>다음 단계에 주는 것:</strong> ${data.outcome}`;
+        programRoadmapDetail.style.borderLeftColor = data.tone === 'burgundy' ? 'var(--burgundy)' : 'var(--teal)';
+        document.getElementById('programRoadmapTag').style.color = data.tone === 'burgundy' ? 'var(--burgundy)' : 'var(--teal)';
+      };
+      programRoadmapButtons.forEach(button => button.addEventListener('click', () => updateProgramRoadmap(button)));
+
+      const interpretationData = {
+        observe: { tag: '1 · 관찰', title: '느린 행동은 출발점이지 진단이 아닙니다', body: '수술 후 천천히 걷거나 활동이 줄었다는 사실만으로 기능적 시각회복이 늦다고 결론 내릴 수 없습니다.', list: ['시각 재사용 지연, 통증·염증, 넥카라·불안, 약물 등이 같은 행동으로 나타날 수 있습니다.', '행동을 먼저 기록하고 서로 다른 원인 기준선과 비교해야 합니다.'], outcome: '기반축 A는 기대되는 시각 회복을, 기반축 B는 시각 외 원인이 만드는 행동을 제공합니다.' },
+        compare: { tag: '2 · 두 기준선과 비교', title: '공통 기준선은 두 연구의 결과를 나란히 놓는 것입니다', body: '기반축 A의 기대 회복곡선과 기반축 B의 통증·불편 프로파일을 같은 환자의 같은 시점에 적용합니다.', list: ['A와 비슷하면 자연회복 또는 시각 재사용 지연 가능성을 평가합니다.', 'B와 비슷하면 통증·염증·상황요인의 영향을 우선 고려합니다.', '둘 다 맞으면 혼합 원인으로 보고 반복 평가합니다.'], outcome: '“느리다”는 인상 대신 어느 기준에서 벗어났는지를 설명할 수 있습니다.' },
+        classify: { tag: '3 · 원인 분류', title: '느린 행동을 임상적으로 의미 있는 원인군으로 나눕니다', body: '분류 목적은 완벽한 단일 원인을 단정하는 것이 아니라, 다음 조치를 결정할 수 있을 정도로 원인 가능성을 좁히는 것입니다.', list: ['자연회복 범위: 과도한 우려 없이 추적', '시각 재사용 지연: 단계적 관리와 재활 후보', '통증·염증: 안과 치료와 통증관리 우선', '넥카라·불안·약물 또는 혼합 원인: 환경·시점 조정 후 재평가'], outcome: '같은 행동이라도 원인에 따라 관리와 연구 해석이 달라집니다.' },
+        act: { tag: '4 · 다음 조치', title: '원인에 맞는 관찰·치료·재활을 선택합니다', body: '두 기반 연구의 관계는 최종적으로 환자별 다음 행동을 정하는 데 있습니다.', list: ['자연회복 범위이면 정해진 시점에 경과관찰', '통증·불편이 주원인이면 치료 후 행동을 다시 측정', '기능적 시각사용 지연이 남으면 표적 재활 연구에 등록'], outcome: '행동평가가 설명에서 끝나지 않고 환자선별과 중재 결정으로 연결됩니다.' }
+      };
+      const interpretationButtons = [...document.querySelectorAll('[data-interpretation]')];
+      const updateInterpretation = (button) => {
+        const data = interpretationData[button.dataset.interpretation];
+        if (!data) return;
+        interpretationButtons.forEach(item => { item.classList.toggle('is-active', item === button); item.setAttribute('aria-pressed', String(item === button)); });
+        document.getElementById('interpretationTag').textContent = data.tag;
+        document.getElementById('interpretationTitle').textContent = data.title;
+        document.getElementById('interpretationBody').textContent = data.body;
+        document.getElementById('interpretationList').innerHTML = data.list.map(item => `<li>${item}</li>`).join('');
+        document.getElementById('interpretationOutcome').innerHTML = `<strong>이 단계의 의미:</strong> ${data.outcome}`;
+      };
+      interpretationButtons.forEach(button => button.addEventListener('click', () => updateInterpretation(button)));
+
+      const milestoneTriggers = [...document.querySelectorAll('.milestone-trigger')];
+      milestoneTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const selected = trigger.dataset.milestone;
+          milestoneTriggers.forEach(item => {
+            const isSelected = item === trigger;
+            item.setAttribute('aria-expanded', String(isSelected));
+            const panel = document.getElementById(item.getAttribute('aria-controls'));
+            if (panel) panel.hidden = !isSelected;
+            const article = item.closest('.milestone-item');
+            if (article) article.classList.toggle('is-active', isSelected);
+          });
+        });
       });
 
-      // Roadmap explorer
-      const phases = {
-        foundation: { phase:'Foundation', heading:'기능행동과 통증의 기준선을 만든다', description:'백내장 수술 후 안구–행동 회복관계와 안구 특화 통증·불편 지표를 병행해 이후 모든 연구가 공유할 평가기반을 구축합니다.', bullets:['후천성 성견 주 코호트의 전향적 종단평가','선천성·유년기·장기박탈 증례의 별도 등록','안구통증 ethogram과 예비문항 개발'], output:'반복 가능한 기능행동 과제, 통증 교란 통제, 자연회복의 기준선', offset:'1640' },
-        adaptation: { phase:'Natural adaptation', heading:'시력상실 뒤의 자연 적응을 이해한다', description:'단안 시력상실의 이동전략, 양안 실명의 생활 적응, SARDS의 비시각 감각·인지 표현형을 장기 추적합니다.', bullets:['머리 스캐닝과 motion parallax','급성·점진성, 통증성·비통증성 실명의 층화','후각·청각·인지기능과 적응속도의 관계'], output:'정상 적응범위, 성공적 보상전략, 장기 기능제한의 신호', offset:'1320' },
-        selection: { phase:'Patient selection', heading:'재활이 필요한 환자를 선별한다', description:'자연적으로 잘 적응하는 환자와 통증·불안·인지 또는 시각사용 문제로 기능제한이 지속되는 환자를 구분합니다.', bullets:['자연회복의 정상범위','통증·염증·불안·인지의 영향','적응지연군의 임상적 기준'], output:'중재가 필요한 환자군과 중재 목표의 정의', offset:'990' },
-        rehab: { phase:'Behavioral rehabilitation', heading:'지연군에게만 표적 재활을 검증한다', description:'재활의 필요성을 처음부터 가정하지 않고, 제한이 지속되는 환자에게 능동탐색과 환경중재를 적용합니다.', bullets:['머리 스캐닝과 단안 깊이단서 활용','새로운 환경의 단계적 노출','보호자 행동지침과 환경수정'], output:'과제 특이 재활모듈과 보호자 관리지침', offset:'690' },
-        extension: { phase:'Long-term extension', heading:'치료와 보조기술의 실제 기능효과로 확장한다', description:'유전자치료 후 ERG·OCT 개선이 실제 행동회복으로 이어지는지 평가하고, 완전실명견의 시각–촉각 감각대체를 검증합니다.', bullets:['유전자치료 후 기능회복과 재활 필요성','촉각 공간매핑과 능동탐색','새로운 환경으로의 일반화'], output:'치료효과의 생활기능 endpoint와 환자 맞춤 보조기술', offset:'360' },
-        feedback: { phase:'Feedback', heading:'후속 연구가 평가도구를 다시 개선한다', description:'재활과 감각대체, 유전자치료 연구에서 확인된 행동표현을 초기 기능과제와 통증지표에 다시 반영합니다.', bullets:['새로운 행동표현의 문항화','질환별 기능회복 프로파일 업데이트','임상 개입점과 환자선별 기준 정교화'], output:'학습하는 공통 평가플랫폼과 선순환 연구체계', offset:'0' }
+
+      const causeData = {
+        vision: { tag: '해석 01', title: '시각 재사용 지연', body: '안구 임상상태가 안정되었음에도 기능적 항법과 목표탐색의 회복이 늦는지를 확인합니다.', list: ['안구 지표와 행동지표를 같은 시간축에서 비교', '기본 과제와 고난도 과제의 회복속도 분리', '통증이 감소한 이후에도 제한이 남는지 확인'] },
+        pain: { tag: '해석 02', title: '통증 · 염증', body: '눈감기, 비비기, 광과민, 움직임 회피 등 통증·불편 표현이 활동저하를 설명하는지를 평가합니다.', list: ['국소 안구·안면 표현과 전신 생활영향 분리', '치료 전후 동일 환자의 반응성 검증', '통증 없는 백내장·실명 환자와 판별'] },
+        context: { tag: '해석 03', title: '넥카라 · 불안', body: '넥카라, 병원환경, 보호자의 과도한 제한과 불안이 이동행동을 억제하는지를 분리합니다.', list: ['병원검사와 가정영상의 차이 비교', '넥카라 착용 여부와 환경변수 기록', '병원불안과 시각기능 저하를 별도 평가'] },
+        medication: { tag: '해석 04', title: '약물 효과', body: '진정, 활동감소 또는 불편을 유발할 수 있는 약물과 마취의 영향을 시간축에서 함께 기록합니다.', list: ['투약·마취 시점과 행동측정 시점 정렬', '초기 회복구간의 해석에서 약물효과 통제', '장기 기능제한과 일시적 활동저하 분리'] }
       };
-      const activePath = document.getElementById('roadActive');
-      document.querySelectorAll('[data-phase]').forEach(node => {
+      const causeButtons = [...document.querySelectorAll('.cause-button')];
+      const causeTag = document.getElementById('causeTag');
+      const causeTitle = document.getElementById('causeTitle');
+      const causeBody = document.getElementById('causeBody');
+      const causeList = document.getElementById('causeList');
+      causeButtons.forEach((button, index) => {
         const activate = () => {
-          const key = node.dataset.phase;
-          document.querySelectorAll('[data-phase]').forEach(n => n.setAttribute('aria-pressed', String(n.dataset.phase === key)));
-          const p = phases[key];
-          document.getElementById('roadPhase').textContent = p.phase;
-          document.getElementById('roadHeading').textContent = p.heading;
-          document.getElementById('roadDescription').textContent = p.description;
-          document.getElementById('roadBullets').innerHTML = p.bullets.map(item => `<li>${item}</li>`).join('');
-          document.getElementById('roadOutput').innerHTML = `<strong>다음 단계에 제공:</strong> ${p.output}`;
-          activePath.style.setProperty('--road-offset', p.offset);
+          causeButtons.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+          const data = causeData[button.dataset.cause];
+          causeTag.textContent = data.tag; causeTitle.textContent = data.title; causeBody.textContent = data.body;
+          causeList.innerHTML = data.list.map(item => `<li>${item}</li>`).join('');
         };
-        node.addEventListener('click', activate);
-        node.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+        button.addEventListener('click', activate);
+        button.addEventListener('keydown', (event) => {
+          if (event.key === 'ArrowRight' || event.key === 'ArrowDown') { event.preventDefault(); causeButtons[(index + 1) % causeButtons.length].focus(); }
+          if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') { event.preventDefault(); causeButtons[(index - 1 + causeButtons.length) % causeButtons.length].focus(); }
+        });
       });
-      activePath.style.setProperty('--road-offset', '1640');
+
+      const stages = {
+        1: { tag: '현재 착수 단계', title: '기반 측정 구축', list: ['후천성 백내장 주 코호트의 전향적 종단평가', '선천성·유년기·장기박탈 증례의 별도 등록', '안구통증 ethogram과 예비문항 개발'], next: '반복 가능한 기능행동 평가와 통증·불편 통제변수를 확보합니다.' },
+        2: { tag: '중기 코호트', title: '자연회복과 적응의 이해', list: ['단안 시력상실 후 머리 스캐닝·경로 비대칭 연구', '양안 실명의 생활기능·활동·탐색 궤적 추적', 'SARDS의 후각·청각·비시각 인지 표현형 분석'], next: '자연 적응 범위와 지연군의 기준, 성공적으로 적응한 환자의 보상전략을 확보합니다.' },
+        3: { tag: '표적 중재 단계', title: '행동재활과 환경중재', list: ['능동적 머리 스캐닝과 단안 깊이단서 활용', '새로운 환경의 단계적 노출', '장애물·간격·움직이는 표적 훈련과 보호자 지침'], next: '자연회복 이후에도 제한이 남는 환자에게만 중재를 적용하고 효과를 재측정합니다.' },
+        4: { tag: '장기 공동연구', title: '유전자치료와 감각대체로 확장', list: ['ERG·OCT 개선과 실제 행동회복의 시간축 비교', '발달기·장기 실명에서 치료 후 재활 필요성 검증', '완전실명견의 시각–촉각 공간매핑과 일반화 연구'], next: '치료·재활·감각대체에서 얻은 행동자료를 다시 환자선별과 평가도구 개선에 반영합니다.' }
+      };
+      const stageButtons = [...document.querySelectorAll('.stage-button')];
+      const stagePanel = document.getElementById('stage-panel');
+      const stageTag = document.getElementById('stageTag');
+      const stageTitle = document.getElementById('stageTitle');
+      const stageList = document.getElementById('stageList');
+      const stageNext = document.getElementById('stageNext');
+      stageButtons.forEach((button, index) => {
+        const activate = (focusPanel = false) => {
+          stageButtons.forEach(b => b.setAttribute('aria-selected', String(b === button)));
+          const data = stages[button.dataset.stage];
+          stagePanel.setAttribute('aria-labelledby', button.id);
+          stageTag.textContent = data.tag; stageTitle.textContent = data.title;
+          stageList.innerHTML = data.list.map(item => `<li>${item}</li>`).join('');
+          stageNext.innerHTML = `<strong>다음 단계로 넘어가는 조건:</strong> ${data.next}`;
+          if (focusPanel) stagePanel.focus();
+        };
+        button.addEventListener('click', () => activate(false));
+        button.addEventListener('keydown', (event) => {
+          let next = null;
+          if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = stageButtons[(index + 1) % stageButtons.length];
+          if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = stageButtons[(index - 1 + stageButtons.length) % stageButtons.length];
+          if (next) { event.preventDefault(); next.focus(); next.click(); }
+          if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); activate(true); }
+        });
+      });
     })();
   </script>
 </body>
