@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="충북대학교 수의안과 연구 방향을 반영한 기능적 시각행동 연구 로드맵" />
+  <title>수의안과 기능적 시각행동 연구 로드맵 · 충북대 컨택용</title>
+</head>
+<body>
+  <noscript>이 페이지는 JavaScript가 필요합니다. 기본 로드맵은 <a href="./index.html">여기</a>에서 확인할 수 있습니다.</noscript>
+  <script>
+    (async () => {
+      const response = await fetch('./index.html', { cache: 'no-store' });
+      if (!response.ok) throw new Error(`index.html을 불러오지 못했습니다: ${response.status}`);
+      let html = await response.text();
+
+      const replacements = [
+        [
+          '안구 임상상태와 기능적 시각행동을 같은 시간축에서 반복 측정해, 환자군과 과제별 기대 회복곡선을 만듭니다.',
+          'UBM·안압·염증 등 객관적 안구 임상지표와 기능적 시각행동을 같은 시간축에서 반복 측정해, 환자군과 과제별 기대 회복곡선을 만듭니다.'
+        ],
+        [
+          '안구 임상상태와 기본적인 기능적 시각행동이 <span class="accent">빠르게 동시 회복</span>할 수 있습니다.',
+          'UBM·안압·염증 등 객관적 안구 임상지표와 기본적인 기능적 시각행동이 <span class="accent">빠르게 동시 회복</span>할 수 있습니다.'
+        ],
+        [
+          '안구 임상상태와 기능적 시각행동의 개념적 회복곡선',
+          '객관적 안구 임상지표와 기능적 시각행동의 개념적 회복곡선'
+        ],
+        [
+          '선택한 환자군 또는 과제에 따라 안구 임상상태와 기능적 시각행동의 회복곡선 사이 간격이 달라지는 개념도입니다.',
+          '선택한 환자군 또는 과제에 따라 UBM·안압·염증 등 객관적 안구 임상지표와 기능적 시각행동의 회복곡선 사이 간격이 달라지는 개념도입니다.'
+        ],
+        ['>안구 임상상태<', '>객관적 안구 임상지표<'],
+        ['단안 · 양안 · SARDS', '단안 · 양안 · 급성/만성 실명질환'],
+        ['단안 · 양안 · SARDS의 실제 적응 궤적', '단안 · 양안 · 급성/만성 실명질환의 실제 적응 궤적'],
+        [
+          '단안·양안 시력상실과 SARDS에서 동물이 실제로 어떻게 보상하고 적응하는지 장기 추적합니다.',
+          '단안·양안 시력상실과 급성·만성 실명질환에서 동물이 실제로 어떻게 보상하고 적응하는지 장기 추적합니다.'
+        ],
+        ['SARDS의 비시각 감각·인지 표현형', '급성·만성 실명질환의 비시각 감각·인지 표현형'],
+        ['SARDS의 후각·청각·비시각 인지 표현형', '급성·만성 실명질환의 후각·청각·비시각 인지 표현형'],
+        ['SARDS의 후각·청각·비시각 인지 표현형 분석', '급성·만성 실명질환의 후각·청각·비시각 인지 표현형 분석'],
+        ['ERG·OCT 개선과 행동회복의 시간축 비교', 'UBM·OCT·ERG 등 질환별 객관적 안구지표와 행동회복의 시간축 비교'],
+        ['ERG·OCT 개선과 실제 행동회복의 시간축 비교', 'UBM·OCT·ERG 등 질환별 객관적 안구지표와 실제 행동회복의 시간축 비교'],
+        [
+          '안구 임상상태가 안정되었음에도 기능적 항법과 목표탐색의 회복이 늦는지를 확인합니다.',
+          'UBM·안압·염증 등 객관적 안구 임상지표가 안정되었음에도 기능적 항법과 목표탐색의 회복이 늦는지를 확인합니다.'
+        ]
+      ];
+
+      for (const [from, to] of replacements) {
+        html = html.split(from).join(to);
+      }
+
+      html = html.replace(
+        '<title>수의안과 기능적 시각행동 연구 로드맵</title>',
+        '<title>수의안과 기능적 시각행동 연구 로드맵 · 충북대 컨택용</title>'
+      );
+      html = html.replace(
+        '<meta name="description" content="수의안과 치료 후 안구 상태, 기능적 시각행동, 생활 적응의 관계를 설명하는 인터랙티브 연구 로드맵" />',
+        '<meta name="description" content="충북대학교 수의안과의 UBM·안압·전안부 정량화 연구와 기능적 시각행동을 연결한 인터랙티브 연구 로드맵" />'
+      );
+
+      document.open();
+      document.write(html);
+      document.close();
+    })().catch((error) => {
+      document.body.innerHTML = `<main style="font-family:system-ui,sans-serif;max-width:720px;margin:80px auto;padding:0 24px;line-height:1.7"><h1>페이지를 불러오지 못했습니다.</h1><p>${error.message}</p><p><a href="./index.html">기본 로드맵 열기</a></p></main>`;
+    });
+  </script>
+</body>
+</html>
